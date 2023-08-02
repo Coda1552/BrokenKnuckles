@@ -27,6 +27,6 @@ public class HoleDiggerEnchantment extends Enchantment {
     }
     @Override
     public boolean checkCompatibility(Enchantment pEnch) {
-        return super.checkCompatibility(pEnch) && pEnch != Enchantments.BLOCK_EFFICIENCY;
+        return super.checkCompatibility(pEnch) && pEnch != Enchantments.BLOCK_EFFICIENCY && pEnch != Enchantments.BLOCK_FORTUNE;
     }
 }
