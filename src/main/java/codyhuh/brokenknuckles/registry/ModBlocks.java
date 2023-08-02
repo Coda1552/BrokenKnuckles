@@ -18,8 +18,8 @@ import java.util.function.Supplier;
 
 
 public class ModBlocks {
-
     public static DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BrokenKnuckles.MOD_ID);
+
     public static final RegistryObject<Block> DWARVEN_STEEL_BLOCK = registerBlock("dwarven_steel_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)
             .strength(50F, 2000F)
             .requiresCorrectToolForDrops()
@@ -30,9 +30,11 @@ public class ModBlocks {
         registerBlockItem(name, toReturn);
         return toReturn;
     }
-    private static <T extends Block>RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block){
+
+   private static <T extends Block>RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block){
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
+
     public static void register(IEventBus eventBus){
         BLOCKS.register(eventBus);
     }

@@ -15,11 +15,12 @@ public class BrokenKnuckles {
 
     public BrokenKnuckles() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+
         ModBlocks.register(bus);
         ModItems.ITEMS.register(bus);
         ModCreativeTabs.CREATIVE_MODE_TABS.register(bus);
-        MinecraftForge.EVENT_BUS.register(this);
         ModEnchantments.register(bus);
 
+        MinecraftForge.EVENT_BUS.register(this);
     }
 }

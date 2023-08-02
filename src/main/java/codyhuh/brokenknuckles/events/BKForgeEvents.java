@@ -6,7 +6,6 @@ import codyhuh.brokenknuckles.common.items.DwarvenHammerItem;
 import codyhuh.brokenknuckles.registry.ModEnchantments;
 import io.redspace.ironsspellbooks.damage.ISSDamageTypes;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;

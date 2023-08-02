@@ -18,12 +18,14 @@ public class ModItems {
     public static final RegistryObject<Item> DWARVEN_ARMOR_PARTS = ITEMS.register("dwarven_armor_parts", () -> new Item(new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> MAGIC_CLOTH = ITEMS.register("magic_cloth", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> DWARVEN_STEEL_NUGGET = ITEMS.register("dwarven_steel_nugget", () -> new Item(new Item.Properties().fireResistant()));
+
     public static final RegistryObject<Item> DWARVEN_STEEL_HELMET = ITEMS.register("dwarven_steel_helmet", () -> new DwarvenArmorItem(ModArmorMaterials.DWARVEN, ArmorItem.Type.HELMET, new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> DWARVEN_STEEL_CHESTPLATE = ITEMS.register("dwarven_steel_chestplate", () -> new DwarvenArmorItem(ModArmorMaterials.DWARVEN, ArmorItem.Type.CHESTPLATE, new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> DWARVEN_STEEL_LEGGINGS = ITEMS.register("dwarven_steel_leggings", () -> new DwarvenArmorItem(ModArmorMaterials.DWARVEN, ArmorItem.Type.LEGGINGS, new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> DWARVEN_STEEL_BOOTS = ITEMS.register("dwarven_steel_boots", () -> new DwarvenArmorItem(ModArmorMaterials.DWARVEN, ArmorItem.Type.BOOTS, new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> DWARVEN_STEEL_AXE = ITEMS.register("dwarven_steel_axe", () -> new DwarvenAxeItem(ModToolTiers.DWARVEN_STEEL, 3, -3, new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> DWARVEN_STEEL_HAMMER = ITEMS.register("dwarven_steel_hammer", () -> new DwarvenHammerItem(5, -3.5F, ModToolTiers.DWARVEN_STEEL_HAMMER, new Item.Properties().fireResistant()));
+
     public static final RegistryObject<Item> INVIS_HELMET = ITEMS.register("invis_helmet", () -> new InvisArmorItem(ModArmorMaterials.INVIS, ArmorItem.Type.HELMET, new Item.Properties()));
     public static final RegistryObject<Item> INVIS_CHESTPLATE = ITEMS.register("invis_chestplate", () -> new InvisArmorItem(ModArmorMaterials.INVIS, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
     public static final RegistryObject<Item> INVIS_LEGGINGS = ITEMS.register("invis_leggings", () -> new InvisArmorItem(ModArmorMaterials.INVIS, ArmorItem.Type.LEGGINGS, new Item.Properties()));
