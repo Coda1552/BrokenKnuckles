@@ -1,3 +1,29 @@
 {
-  "item.brokenknuckles.soul_blade": "Soul Blade"
+  "itemGroup.brokenkunckles": "Broken Knuckles",
+
+  "item.brokenknuckles.soul_blade": "Soul Blade",
+
+  "item.brokenknuckles.dwarven_armor_parts": "Dwarven Armor Parts",
+  "item.brokenknuckles.dwarven_steel_helmet": "Dwarven Steel Helm",
+  "item.brokenknuckles.dwarven_steel_chestplate": "Dwarven Steel Chestplate",
+  "item.brokenknuckles.dwarven_steel_leggings": "Dwarven Steel Leggings",
+  "item.brokenknuckles.dwarven_steel_boots": "Dwarven Steel Boots",
+
+  "item.brokenknuckles.invis_helmet": "Magician's Cap",
+  "item.brokenknuckles.invis_chestplate": "Thief's Cloak",
+  "item.brokenknuckles.invis_leggings": "Goblin's Greaves",
+  "item.brokenknuckles.invis_boots": "Ancient Sorcerer's Boots",
+
+  "item.brokenknuckles.ocean_helmet": "Ocean Dweller's Helmet",
+  "item.brokenknuckles.ocean_chestplate": "Ocean Dweller's Chestplate",
+  "item.brokenknuckles.ocean_leggings": "Ocean Dweller's Leggings",
+  "item.brokenknuckles.ocean_boots": "Ocean Dweller's Boots",
+
+  "item.brokenknuckles.magic_cloth": "Magical Cloth",
+
+  "event.brokenknuckles.damagereduce0": "No stacks",
+  "event.brokenknuckles.damagereduce1": "One stack",
+  "event.brokenknuckles.damagereduce2": "Two stacks",
+  "event.brokenknuckles.damagereduce3": "Three stacks",
+  "event.brokenknuckles.damagereduce4": "Four stacks"
 }

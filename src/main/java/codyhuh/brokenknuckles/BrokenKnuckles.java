@@ -1,5 +1,6 @@
 package codyhuh.brokenknuckles;
 
+import codyhuh.brokenknuckles.registry.ModCreativeTabs;
 import codyhuh.brokenknuckles.registry.ModItems;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -13,5 +14,6 @@ public class BrokenKnuckles {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.ITEMS.register(bus);
+        ModCreativeTabs.CREATIVE_MODE_TABS.register(bus);
     }
 }
