@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "brokenknuckles:item/dwarven_steel_hammer"
+  }
+}

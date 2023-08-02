@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.Block;
 
 public class ModTags {
     public static final TagKey<Block> NEEDS_DWARVEN_TOOL = blockTag("needs_dwarven_tool");
-
+    public static final TagKey<Block> HAMMER_MINEABLE = blockTag("hammer_mineable");
     private static TagKey<Block> blockTag(String name){
         return BlockTags.create(new ResourceLocation(BrokenKnuckles.MOD_ID, name));
     }

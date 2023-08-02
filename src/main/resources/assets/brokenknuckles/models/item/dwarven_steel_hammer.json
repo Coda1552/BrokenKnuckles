@@ -1,0 +1,22 @@
+{
+    "parent": "minecraft:item/handheld",
+    "loader": "forge:separate_transforms",
+    "base": {
+        "parent": "brokenknuckles:item/dwarven_steel_hammer_3d"
+    },
+    "perspectives": {
+        "gui": {
+          "parent": "brokenknuckles:item/dwarven_steel_hammer_gui"
+        },
+        "ground": {
+          "parent": "brokenknuckles:item/dwarven_steel_hammer_gui"
+        },
+        "fixed": {
+          "parent": "brokenknuckles:item/dwarven_steel_hammer_gui"
+        }
+
+    }
+
+
+
+}

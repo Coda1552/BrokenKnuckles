@@ -18,5 +18,8 @@ public class ModCreativeTabs {
                 for (var item : ModItems.ITEMS.getEntries()) {
                     pOutput.accept(item.get());
                 }
+                for (var block: ModBlocks.BLOCKS.getEntries()){
+                    pOutput.accept(block.get());
+                }
             }).build());
 }

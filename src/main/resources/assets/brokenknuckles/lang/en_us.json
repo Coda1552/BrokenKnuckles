@@ -3,11 +3,18 @@
 
   "item.brokenknuckles.soul_blade": "Soul Blade",
 
-  "item.brokenknuckles.dwarven_armor_parts": "Dwarven Armor Parts",
+  "block.brokenknuckles.dwarven_steel_block": "Dwarven Steel Block",
+
+  "item.brokenknuckles.dwarven_armor_parts": "Dwarven Steel",
+  "item.brokenknuckles.dwarven_steel_nugget": "Dwarven Steel Nugget",
+  "item.brokenknuckles.dwarven_steel_axe": "Dwarven Steel Axe",
+  "item.brokenknuckles.dwarven_steel_hammer": "Dwarven Steel Hammer",
   "item.brokenknuckles.dwarven_steel_helmet": "Dwarven Steel Helm",
   "item.brokenknuckles.dwarven_steel_chestplate": "Dwarven Steel Chestplate",
   "item.brokenknuckles.dwarven_steel_leggings": "Dwarven Steel Leggings",
   "item.brokenknuckles.dwarven_steel_boots": "Dwarven Steel Boots",
+
+  "enchantment.brokenknuckles.hole_digger": "5x5 Hole Digger",
 
   "item.brokenknuckles.invis_helmet": "Magician's Cap",
   "item.brokenknuckles.invis_chestplate": "Thief's Cloak",
@@ -25,5 +32,7 @@
   "event.brokenknuckles.damagereduce1": "One stack",
   "event.brokenknuckles.damagereduce2": "Two stacks",
   "event.brokenknuckles.damagereduce3": "Three stacks",
-  "event.brokenknuckles.damagereduce4": "Four stacks"
+  "event.brokenknuckles.damagereduce4": "Four stacks",
+  "event.brokenknuckles.enchanted": "Enchanted",
+  "event.brokenknuckles.notenchanted": "Not enchanted"
 }
