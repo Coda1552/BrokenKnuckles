@@ -1,20 +1,13 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "xyx",
-    " z ",
-    " z "
-  ],
-  "key": {
-    "x": {
-      "item": "brokenknuckles:dwarven_steel_block"
-    },
-    "y": {
-      "item": "minecraft:netherite_pickaxe"
-    },
-    "z": {
-      "item": "brokenknuckles:dwarven_armor_parts"
-    }
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "brokenknuckles:dwarven_template"
+  },
+  "base": {
+    "item": "minecraft:diamond_pickaxe"
+  },
+  "addition": {
+    "item": "brokenknuckles:dwarven_steel_block"
   },
   "result": {
     "item": "brokenknuckles:dwarven_steel_hammer",

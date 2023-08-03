@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "yyy",
+    "y z",
+    "zzz"
+  ],
+  "key": {
+    "y": {
+      "item": "minecraft:gold_ingot"
+    },
+    "z": {
+      "item": "brokenknuckles:dwarven_steel_nugget"
+    }
+  },
+  "result": {
+    "item": "brokenknuckles:dwarven_armor_parts",
+    "count": 1
+  }
+}

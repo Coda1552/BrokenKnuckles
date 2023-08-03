@@ -4,12 +4,13 @@
     "item": "brokenknuckles:dwarven_template"
   },
   "base": {
-    "item": "minecraft:netherite_axe"
+    "item": "minecraft:diamond_axe"
   },
   "addition": {
     "item": "brokenknuckles:dwarven_armor_parts"
   },
   "result": {
-    "item": "brokenknuckles:dwarven_steel_axe"
+    "item": "brokenknuckles:dwarven_steel_axe",
+    "count": 1
   }
 }
