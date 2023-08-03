@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "brokenknuckles:dwarven_steel_block"
+    }
+  ],
+  "result": {
+    "item": "brokenknuckles:dwarven_armor_parts",
+    "count": 9
+  }
+}

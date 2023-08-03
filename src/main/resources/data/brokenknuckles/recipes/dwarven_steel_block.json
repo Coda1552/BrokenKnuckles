@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "key": {
+    "x": {
+      "item": "brokenknuckles:dwarven_armor_parts"
+    }
+  },
+  "result": {
+    "item": "brokenknuckles:dwarven_steel_block"
+  }
+}
