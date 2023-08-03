@@ -15,6 +15,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
 import javax.annotation.Nullable;
+import java.util.function.Consumer;
 
 public class DwarvenArmorItem extends ArmorItem {
     private static final String LOC = new ResourceLocation(BrokenKnuckles.MOD_ID, "textures/models/armor/dwarven_steel_armor.png").toString();
@@ -38,7 +39,7 @@ public class DwarvenArmorItem extends ArmorItem {
     }
 
     @Override
-    public void initializeClient(java.util.function.Consumer<net.minecraftforge.client.extensions.common.IClientItemExtensions> consumer) {
+    public void initializeClient(Consumer<IClientItemExtensions> consumer) {
         consumer.accept(new IClientItemExtensions() {
             private DwarvenSteelArmorModel model;
 
