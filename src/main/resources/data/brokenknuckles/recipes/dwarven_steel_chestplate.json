@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "brokenknuckles:dwarven_template"
+  },
+  "base": {
+    "item": "minecraft:netherite_chestplate"
+  },
+  "addition": {
+    "item": "brokenknuckles:dwarven_armor_parts"
+  },
+  "result": {
+    "item": "brokenknuckles:dwarven_steel_chestplate",
+    "count": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xyx",
+    " z ",
+    " z "
+  ],
+  "key": {
+    "x": {
+      "item": "brokenknuckles:dwarven_steel_block"
+    },
+    "y": {
+      "item": "minecraft:netherite_pickaxe"
+    },
+    "z": {
+      "item": "brokenknuckles:dwarven_armor_parts"
+    }
+  },
+  "result": {
+    "item": "brokenknuckles:dwarven_steel_hammer",
+    "count": 1
+  }
+}
