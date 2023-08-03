@@ -74,20 +74,22 @@ public class BKForgeEvents {
                || source.is(ISSDamageTypes.ICE_MAGIC) || source.is(ISSDamageTypes.LIGHTNING_MAGIC) || source.is(ISSDamageTypes.POISON_CLOUD)
                || source.is(ISSDamageTypes.POISON_MAGIC) || source.is(ISSDamageTypes.VOID_MAGIC);
     }
+
     private static final Set<BlockPos> HARVESTED_BLOCKS = new HashSet<>();
+
     @SubscribeEvent
     public static void onHammerUsage(BlockEvent.BreakEvent event) {
-
         Player player = event.getPlayer();
         ItemStack mainHandItem = player.getMainHandItem();
         boolean enchanted = hasEnchantment(ModEnchantments.HOLE_DIGGER.get(), mainHandItem);
-        if(mainHandItem.getItem() instanceof DwarvenHammerItem hammer && player instanceof ServerPlayer serverPlayer && !player.isCreative()) {
+
+        if (mainHandItem.getItem() instanceof DwarvenHammerItem hammer && player instanceof ServerPlayer serverPlayer && !player.isCreative()) {
             BlockPos initalBlockPos = event.getPos();
             if (HARVESTED_BLOCKS.contains(initalBlockPos)) {
                 return;
             }
 
-            if(enchanted){
+            if (enchanted) {
                 for (BlockPos pos : DwarvenHammerItem.getBlocksToBeDestroyed(2, initalBlockPos, serverPlayer)) {
                     if(pos == initalBlockPos || !hammer.isCorrectToolForDrops(mainHandItem, event.getLevel().getBlockState(pos))) {
                         continue;
@@ -99,7 +101,7 @@ public class BKForgeEvents {
                     HARVESTED_BLOCKS.remove(pos);
                 }
             }
-            if(!enchanted){
+            if (!enchanted) {
                 for (BlockPos pos : DwarvenHammerItem.getBlocksToBeDestroyed(1, initalBlockPos, serverPlayer)) {
                     if(pos == initalBlockPos || !hammer.isCorrectToolForDrops(mainHandItem, event.getLevel().getBlockState(pos))) {
                         continue;
@@ -114,6 +116,7 @@ public class BKForgeEvents {
 
         }
     }
+
     public static boolean hasEnchantment(Enchantment ench, ItemStack stack) {
         return EnchantmentHelper.getEnchantments(stack).containsKey(ench);
     }
