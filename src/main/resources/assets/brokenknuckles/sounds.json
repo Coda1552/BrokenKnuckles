@@ -1,0 +1,27 @@
+{
+  "flintknock.reload": {
+    "sounds": [
+      {
+        "name": "brokenknuckles:flintknock/reload"
+      }
+    ],
+    "subtitle": "sound.brokenknuckles.flintknock_reload"
+  },
+  "flintknock.shoot": {
+    "sounds": [
+      {
+        "name": "brokenknuckles:flintknock/shoot1"
+      },
+      {
+        "name": "brokenknuckles:flintknock/shoot2"
+      },
+      {
+        "name": "brokenknuckles:flintknock/shoot3"
+      },
+      {
+        "name": "brokenknuckles:flintknock/shoot4"
+      }
+    ],
+    "subtitle": "sound.brokenknuckles.flintknock_shoot"
+  }
+}

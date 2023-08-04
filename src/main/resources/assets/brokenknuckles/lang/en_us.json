@@ -4,8 +4,6 @@
   "item.brokenknuckles.soul_blade": "Soul Blade",
   "item.brokenknuckles.flintknock_pistol": "Flintknock Pistol",
 
-  "block.brokenknuckles.dwarven_steel_block": "Dwarven Steel Block",
-
   "item.brokenknuckles.dwarven_armor_parts": "Dwarven Steel",
   "item.brokenknuckles.dwarven_template": "Dwarven Upgrade Template",
   "item.brokenknuckles.dwarven_steel_nugget": "Dwarven Steel Nugget",
@@ -15,8 +13,6 @@
   "item.brokenknuckles.dwarven_steel_chestplate": "Dwarven Steel Chestplate",
   "item.brokenknuckles.dwarven_steel_leggings": "Dwarven Steel Leggings",
   "item.brokenknuckles.dwarven_steel_boots": "Dwarven Steel Boots",
-
-  "enchantment.brokenknuckles.hole_digger": "5x5 Hole Digger",
 
   "item.brokenknuckles.invis_helmet": "Magician's Cap",
   "item.brokenknuckles.invis_chestplate": "Thief's Cloak",
@@ -29,6 +25,15 @@
   "item.brokenknuckles.ocean_boots": "Ocean Dweller's Boots",
 
   "item.brokenknuckles.magic_cloth": "Magical Cloth",
+
+  "block.brokenknuckles.dwarven_steel_block": "Dwarven Steel Block",
+
+  "enchantment.brokenknuckles.hole_digger": "5x5 Hole Digger",
+
+  "entity.brokenknuckles.bullet": "Bullet",
+
+  "sound.brokenknuckles.flintknock_shoot": "Flintknock fires",
+  "sound.brokenknuckles.flintknock_reloading": "Flintknock reloads",
 
   "event.brokenknuckles.damagereduce0": "No stacks",
   "event.brokenknuckles.damagereduce1": "One stack",

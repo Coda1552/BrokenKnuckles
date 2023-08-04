@@ -1,7 +1,7 @@
 {
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "brokenknuckles:item/flintknock_pistol",
+		"0": "brokenknuckles:item/flintknock_pistol_loaded",
 		"particle": "brokenknuckles:item/flintknock_pistol"
 	},
 	"elements": [
@@ -121,14 +121,6 @@
 			"origin": [0, 0, 0],
 			"color": 0,
 			"children": [0, 1, 2, 3, 4, 5]
-		}
-	],
-	"overrides": [
-		{
-			"predicate": {
-				"charged": 1
-			},
-			"model": "brokenknuckles:item/flintknock_pistol_loaded"
 		}
 	]
 }

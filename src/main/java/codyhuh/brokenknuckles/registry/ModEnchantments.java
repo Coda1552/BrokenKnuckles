@@ -18,8 +18,4 @@ public class ModEnchantments {
 
     public static final RegistryObject<Enchantment> HOLE_DIGGER = ENCHANTMENTS.register("hole_digger",
                     () -> new HoleDiggerEnchantment(Enchantment.Rarity.RARE, HAMMER, EquipmentSlot.MAINHAND));
-
-    public static void register(IEventBus eventBus) {
-        ENCHANTMENTS.register(eventBus);
-    }
 }
