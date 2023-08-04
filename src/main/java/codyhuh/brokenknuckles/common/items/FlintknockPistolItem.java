@@ -1,5 +1,7 @@
 package codyhuh.brokenknuckles.common.items;
 
+import codyhuh.brokenknuckles.common.entities.item.Bullet;
+import codyhuh.brokenknuckles.registry.ModItems;
 import codyhuh.brokenknuckles.registry.ModSounds;
 import com.google.common.collect.Lists;
 import net.minecraft.client.renderer.item.ItemProperties;
@@ -92,7 +94,7 @@ public class FlintknockPistolItem extends ProjectileWeaponItem {
         ItemStack itemstack = pShooter.getProjectile(pCrossbowStack);
 
         if (itemstack.isEmpty() && flag) {
-            itemstack = new ItemStack(Items.ARROW);
+            itemstack = new ItemStack(ModItems.BULLET.get());
         }
 
         return loadProjectile(pShooter, pCrossbowStack, itemstack, flag);
@@ -102,7 +104,7 @@ public class FlintknockPistolItem extends ProjectileWeaponItem {
         if (pAmmoStack.isEmpty()) {
             return false;
         } else {
-            boolean flag = pIsCreative && pAmmoStack.getItem() instanceof ArrowItem;
+            boolean flag = pIsCreative && pAmmoStack.getItem() instanceof BulletItem;
             ItemStack itemstack;
             if (!flag && !pIsCreative) {
                 itemstack = pAmmoStack.split(1);
@@ -171,7 +173,6 @@ public class FlintknockPistolItem extends ProjectileWeaponItem {
     }
 
     public static void performShooting(Level pLevel, LivingEntity pShooter, InteractionHand pUsedHand, ItemStack pCrossbowStack, float pInaccuracy) {
-        if (pShooter instanceof Player player && ForgeEventFactory.onArrowLoose(pCrossbowStack, pShooter.level(), player, 1, true) < 0) return;
         List<ItemStack> list = getChargedProjectiles(pCrossbowStack);
 
         for (ItemStack itemstack : list) {
@@ -186,7 +187,7 @@ public class FlintknockPistolItem extends ProjectileWeaponItem {
 
     private static void shootProjectile(Level pLevel, LivingEntity pShooter, InteractionHand pHand, ItemStack pCrossbowStack, ItemStack pAmmoStack, boolean pIsCreativeMode, float pInaccuracy, float pProjectileAngle) {
         if (!pLevel.isClientSide) {
-            AbstractArrow projectile = getArrow(pLevel, pShooter, pAmmoStack);
+            Bullet projectile = getArrow(pLevel, pShooter, pAmmoStack);
             if (pIsCreativeMode || pProjectileAngle != 0.0F) {
                 projectile.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
             }
@@ -209,17 +210,16 @@ public class FlintknockPistolItem extends ProjectileWeaponItem {
         }
     }
 
-    private static AbstractArrow getArrow(Level pLevel, LivingEntity pLivingEntity, ItemStack pAmmoStack) {
-        ArrowItem arrowitem = (ArrowItem)(pAmmoStack.getItem() instanceof ArrowItem ? pAmmoStack.getItem() : Items.ARROW);
-        AbstractArrow abstractarrow = arrowitem.createArrow(pLevel, pAmmoStack, pLivingEntity);
+    private static Bullet getArrow(Level pLevel, LivingEntity pLivingEntity, ItemStack pAmmoStack) {
+        BulletItem bulletitem = (BulletItem)(pAmmoStack.getItem() instanceof BulletItem ? pAmmoStack.getItem() : ModItems.BULLET.get());
+        Bullet bullet = bulletitem.createBullet(pLevel, pAmmoStack, pLivingEntity);
         if (pLivingEntity instanceof Player) {
-            abstractarrow.setCritArrow(true);
+            bullet.setCritArrow(true);
         }
 
-        abstractarrow.setSoundEvent(SoundEvents.CROSSBOW_HIT);
-        abstractarrow.setShotFromCrossbow(true);
+        bullet.setSoundEvent(SoundEvents.CROSSBOW_HIT);
 
-        return abstractarrow;
+        return bullet;
     }
 
     private static void onCrossbowShot(LivingEntity pShooter, ItemStack pCrossbowStack) {
@@ -251,7 +251,7 @@ public class FlintknockPistolItem extends ProjectileWeaponItem {
     }
 
     public Predicate<ItemStack> getAllSupportedProjectiles() {
-        return ARROW_ONLY;
+        return e -> e.is(ModItems.BULLET.get());
     }
 
     public int getDefaultProjectileRange() {

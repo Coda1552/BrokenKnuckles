@@ -15,6 +15,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> SOUL_BLADE = ITEMS.register("soul_blade", () -> new SoulBladeItem(Tiers.IRON, 3, -2.55F, new Item.Properties().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> FLINTKNOCK_PISTOL = ITEMS.register("flintknock_pistol", () -> new FlintknockPistolItem(new Item.Properties().rarity(Rarity.UNCOMMON).durability(180)));
+    public static final RegistryObject<Item> BULLET = ITEMS.register("bullet", () -> new BulletItem(new Item.Properties()));
 
     public static final RegistryObject<Item> DWARVEN_ARMOR_PARTS = ITEMS.register("dwarven_armor_parts", () -> new Item(new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> MAGIC_CLOTH = ITEMS.register("magic_cloth", () -> new Item(new Item.Properties()));

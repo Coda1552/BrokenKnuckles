@@ -11,5 +11,5 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, BrokenKnuckles.MOD_ID);
 
-    public static final RegistryObject<EntityType<Bullet>> BULLET = ENTITIES.register("bullet", () -> EntityType.Builder.of(Bullet::new, MobCategory.MISC).fireImmune().sized(0.15F, 0.15F).build("bullet"));
+    public static final RegistryObject<EntityType<Bullet>> BULLET = ENTITIES.register("bullet", () -> EntityType.Builder.<Bullet>of(Bullet::new, MobCategory.MISC).fireImmune().sized(0.15F, 0.15F).build("bullet"));
 }
