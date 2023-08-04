@@ -65,6 +65,7 @@ public class BKForgeEvents {
                 break;
         }
     }
+
     public static boolean checkDamageType(DamageSource source){
         return source.is(DamageTypes.MAGIC) || source.is(DamageTypes.INDIRECT_MAGIC) || source.is(DamageTypes.LIGHTNING_BOLT)
                || source.is(DamageTypes.WITHER) || source.is(DamageTypes.WITHER_SKULL) || source.is(DamageTypes.DRAGON_BREATH)
