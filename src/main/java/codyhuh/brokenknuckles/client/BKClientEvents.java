@@ -1,11 +1,15 @@
 package codyhuh.brokenknuckles.client;
 
 import codyhuh.brokenknuckles.BrokenKnuckles;
+import codyhuh.brokenknuckles.client.geo.SimpleGeoModel;
+import codyhuh.brokenknuckles.client.geo.SimpleGeoRenderer;
 import codyhuh.brokenknuckles.client.models.BulletModel;
 import codyhuh.brokenknuckles.client.models.DwarvenSteelArmorModel;
 import codyhuh.brokenknuckles.client.renderer.BulletRenderer;
+import codyhuh.brokenknuckles.common.entities.DandyDeer;
 import codyhuh.brokenknuckles.registry.ModEntities;
 import codyhuh.brokenknuckles.registry.ModItems;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CrossbowItem;
@@ -24,7 +28,12 @@ public class BKClientEvents {
 
     @SubscribeEvent
     public static void registerRenders(EntityRenderersEvent.RegisterRenderers e) {
+        // "Vanilla" format models
         e.registerEntityRenderer(ModEntities.BULLET.get(), BulletRenderer::new);
+
+        // Geckolib models
+        e.registerEntityRenderer(ModEntities.DANDY_DEER.get(), mgr -> new SimpleGeoRenderer<>(mgr, new SimpleGeoModel<>(new ResourceLocation(BrokenKnuckles.MOD_ID, "dandy_deer"))));
+        e.registerEntityRenderer(ModEntities.SEA_BEAK.get(), mgr -> new SimpleGeoRenderer<>(mgr, new SimpleGeoModel<>(new ResourceLocation(BrokenKnuckles.MOD_ID, "sea_beak"))));
     }
 
     @SubscribeEvent

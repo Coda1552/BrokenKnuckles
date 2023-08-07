@@ -6,6 +6,7 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Tiers;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -16,6 +17,9 @@ public class ModItems {
     public static final RegistryObject<Item> SOUL_BLADE = ITEMS.register("soul_blade", () -> new SoulBladeItem(Tiers.IRON, 3, -2.55F, new Item.Properties().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> FLINTKNOCK_PISTOL = ITEMS.register("flintknock_pistol", () -> new FlintknockPistolItem(new Item.Properties().rarity(Rarity.UNCOMMON).durability(180)));
     public static final RegistryObject<Item> BULLET = ITEMS.register("bullet", () -> new BulletItem(new Item.Properties()));
+
+    public static final RegistryObject<Item> SEA_BEAK_SPAWN_EGG = ITEMS.register("sea_beak_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.SEA_BEAK, 0x354443, 0x57f5a1, new Item.Properties()));
+    public static final RegistryObject<Item> DANDY_DEER_SPAWN_EGG = ITEMS.register("dandy_deer_spawn_egg", () -> new ForgeSpawnEggItem(ModEntities.DANDY_DEER, 0xa6ef71, 0xcfece1, new Item.Properties()));
 
     public static final RegistryObject<Item> DWARVEN_ARMOR_PARTS = ITEMS.register("dwarven_armor_parts", () -> new Item(new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> MAGIC_CLOTH = ITEMS.register("magic_cloth", () -> new Item(new Item.Properties()));
