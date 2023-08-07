@@ -41,4 +41,9 @@ public class ModItems {
     public static final RegistryObject<Item> OCEAN_CHESTPLATE = ITEMS.register("ocean_chestplate", () -> new OceanArmorItem(ModArmorMaterials.OCEAN, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
     public static final RegistryObject<Item> OCEAN_LEGGINGS = ITEMS.register("ocean_leggings", () -> new OceanArmorItem(ModArmorMaterials.OCEAN, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> OCEAN_BOOTS = ITEMS.register("ocean_boots", () -> new OceanArmorItem(ModArmorMaterials.OCEAN, ArmorItem.Type.BOOTS, new Item.Properties()));
+
+    public static final RegistryObject<Item> SHADOW_CONTROLLER = ITEMS.register("shadow_controller_permanent", () -> new ShadowControllerItem(new Item.Properties().fireResistant()));
+    public static final RegistryObject<Item> TEMP_SHADOW_CONTROLLER = ITEMS.register("shadow_controller_temp", () -> new TempShadowControllerItem(new Item.Properties().fireResistant()));
+    public static final RegistryObject<Item> BARRIER_SETTINGS_WAND = ITEMS.register("barrier_settings_wand", () -> new SettingsWandItem(new Item.Properties().fireResistant()));
+
 }

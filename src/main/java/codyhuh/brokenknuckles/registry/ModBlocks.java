@@ -1,15 +1,13 @@
 package codyhuh.brokenknuckles.registry;
 
 import codyhuh.brokenknuckles.BrokenKnuckles;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.BannerItem;
+import codyhuh.brokenknuckles.common.blocks.MagicBarrierBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -25,13 +23,25 @@ public class ModBlocks {
             .requiresCorrectToolForDrops()
             .sound(SoundType.NETHERITE_BLOCK)));
 
+    public static final RegistryObject<Block> MAGIC_BARRIER_BLOCK = registerBlock("magic_barrier", () -> new MagicBarrierBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)
+            .strength(-1.0F, 3600000F)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.GLASS)));
+
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
-        registerBlockItem(name, toReturn);
+        if(name.equals( "dwarven_steel_block") || name .equals( "magic_barrier")){
+            registerBlockItemWithFireRes(name, toReturn);
+        } else {
+            registerBlockItem(name, toReturn);
+        }
         return toReturn;
     }
 
    private static <T extends Block>RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block){
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    }
+    private static <T extends Block>RegistryObject<Item> registerBlockItemWithFireRes(String name, RegistryObject<T> block){
+        return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().fireResistant()));
     }
 }

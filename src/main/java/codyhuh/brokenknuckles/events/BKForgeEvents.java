@@ -1,8 +1,7 @@
 package codyhuh.brokenknuckles.events;
 
 import codyhuh.brokenknuckles.BrokenKnuckles;
-import codyhuh.brokenknuckles.common.items.DwarvenArmorItem;
-import codyhuh.brokenknuckles.common.items.DwarvenHammerItem;
+import codyhuh.brokenknuckles.common.items.*;
 import codyhuh.brokenknuckles.registry.ModEnchantments;
 import io.redspace.ironsspellbooks.damage.ISSDamageTypes;
 import net.minecraft.core.BlockPos;
@@ -11,11 +10,13 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
+import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -120,6 +121,17 @@ public class BKForgeEvents {
 
     public static boolean hasEnchantment(Enchantment ench, ItemStack stack) {
         return EnchantmentHelper.getEnchantments(stack).containsKey(ench);
+    }
+
+    @SubscribeEvent
+    public static void deleteControllers(LivingDropsEvent event){
+        if (event.getEntity() instanceof net.minecraft.world.entity.player.Player){
+            for(ItemEntity drop : event.getDrops()){
+                if(drop.getItem().getItem() instanceof SettingsWandItem || drop.getItem().getItem() instanceof TempShadowControllerItem || drop.getItem().getItem() instanceof ShadowControllerItem){
+                    drop.discard();
+                }
+            }
+        }
     }
 
 }

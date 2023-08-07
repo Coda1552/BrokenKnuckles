@@ -7,8 +7,11 @@ import codyhuh.brokenknuckles.client.models.BulletModel;
 import codyhuh.brokenknuckles.client.models.DwarvenSteelArmorModel;
 import codyhuh.brokenknuckles.client.renderer.BulletRenderer;
 import codyhuh.brokenknuckles.common.entities.DandyDeer;
+import codyhuh.brokenknuckles.registry.ModBlocks;
 import codyhuh.brokenknuckles.registry.ModEntities;
 import codyhuh.brokenknuckles.registry.ModItems;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
@@ -24,6 +27,7 @@ public class BKClientEvents {
     @SubscribeEvent
     public static void clientSetup(FMLClientSetupEvent e) {
         ItemProperties.register(ModItems.FLINTKNOCK_PISTOL.get(), new ResourceLocation("charged"), (p_275891_, p_275892_, p_275893_, p_275894_) -> CrossbowItem.isCharged(p_275891_) ? 1.0F : 0.0F);
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.MAGIC_BARRIER_BLOCK.get(), RenderType.translucent());
     }
 
     @SubscribeEvent

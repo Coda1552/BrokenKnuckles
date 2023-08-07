@@ -30,6 +30,11 @@
 
   "item.brokenknuckles.magic_cloth": "Magical Cloth",
 
+  "item.brokenknuckles.shadow_controller_permanent": "Shadow Controller",
+  "item.brokenknuckles.shadow_controller_temp": "One Time Shadow Controller",
+  "item.brokenknuckles.barrier_settings_wand": "Barrier Settings Wand",
+  "block.brokenknuckles.magic_barrier": "Magic Barrier Block",
+
   "block.brokenknuckles.dwarven_steel_block": "Dwarven Steel Block",
 
   "enchantment.brokenknuckles.hole_digger": "5x5 Hole Digger",
