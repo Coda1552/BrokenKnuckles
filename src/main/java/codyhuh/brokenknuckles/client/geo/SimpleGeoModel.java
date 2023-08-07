@@ -38,9 +38,5 @@ public class SimpleGeoModel<T extends LivingEntity & GeoEntity> extends Defaulte
                 root.setRotZ(0.0F);
             }
         }
-
-        if (animatable instanceof DandyDeer) {
-            //root.setPosY(-2F);
-        }
     }
 }
