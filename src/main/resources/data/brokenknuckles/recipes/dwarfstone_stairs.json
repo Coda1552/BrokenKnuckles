@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "brokenknuckles:dwarfstone"
+    }
+  },
+  "result": {
+    "count": 4,
+    "item": "brokenknuckles:dwarfstone_stairs"
+  }
+}

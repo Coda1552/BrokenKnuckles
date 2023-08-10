@@ -2,6 +2,12 @@
   "replace": false,
   "values": [
     "brokenknuckles:dwarfstone",
-    "brokenknuckles:dwarfstone_bricks"
+    "brokenknuckles:dwarfstone_bricks",
+    "brokenknuckles:dwarfstone_stairs",
+    "brokenknuckles:dwarfstone_brick_stairs",
+    "brokenknuckles:dwarfstone_slab",
+    "brokenknuckles:dwarfstone_brick_slab",
+    "brokenknuckles:dwarfstone_wall",
+    "brokenknuckles:dwarfstone_brick_wall"
   ]
 }

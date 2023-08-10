@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "brokenknuckles:block/dwarfstone_bricks",
+    "side": "brokenknuckles:block/dwarfstone_bricks",
+    "top": "brokenknuckles:block/dwarfstone_bricks"
+  }
+}

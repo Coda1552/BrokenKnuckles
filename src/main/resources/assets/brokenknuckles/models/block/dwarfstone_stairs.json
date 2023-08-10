@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "brokenknuckles:block/dwarfstone",
+    "side": "brokenknuckles:block/dwarfstone",
+    "top": "brokenknuckles:block/dwarfstone"
+  }
+}

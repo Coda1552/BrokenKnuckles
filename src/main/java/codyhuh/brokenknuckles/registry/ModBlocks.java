@@ -4,9 +4,7 @@ import codyhuh.brokenknuckles.BrokenKnuckles;
 import codyhuh.brokenknuckles.common.blocks.MagicBarrierBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -20,9 +18,32 @@ public class ModBlocks {
     public static final RegistryObject<Block> DWARFSTONE = registerBlock("dwarfstone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)
             .requiresCorrectToolForDrops()
             .sound(SoundType.DEEPSLATE)));
+
+    public static final RegistryObject<Block> DWARFSTONE_STAIRS = registerBlock("dwarfstone_stairs", () -> new StairBlock(DWARFSTONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.DEEPSLATE)));
+
+    public static final RegistryObject<Block> DWARFSTONE_SLAB = registerBlock("dwarfstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.DEEPSLATE)));
+
+    public static final RegistryObject<Block> DWARFSTONE_WALL = registerBlock("dwarfstone_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.DEEPSLATE)));
     public static final RegistryObject<Block> DWARFSTONE_BRICKS = registerBlock("dwarfstone_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_BRICKS)
             .requiresCorrectToolForDrops()
             .sound(SoundType.DEEPSLATE_BRICKS)));
+    public static final RegistryObject<Block> DWARFSTONE_BRICK_STAIRS = registerBlock("dwarfstone_brick_stairs", () -> new StairBlock(DWARFSTONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_BRICK_STAIRS)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.DEEPSLATE)));
+
+    public static final RegistryObject<Block> DWARFSTONE_BRICK_SLAB = registerBlock("dwarfstone_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_BRICK_SLAB)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.DEEPSLATE)));
+
+    public static final RegistryObject<Block> DWARFSTONE_BRICK_WALL = registerBlock("dwarfstone_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_BRICK_WALL)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.DEEPSLATE)));
     public static final RegistryObject<Block> DWARVEN_STEEL_BLOCK = registerBlock("dwarven_steel_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)
             .strength(50F, 2000F)
             .requiresCorrectToolForDrops()

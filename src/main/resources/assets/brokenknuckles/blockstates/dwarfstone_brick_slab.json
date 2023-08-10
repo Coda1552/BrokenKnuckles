@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "brokenknuckles:block/dwarfstone_brick_slab"
+    },
+    "type=double": {
+      "model": "brokenknuckles:block/dwarfstone_bricks"
+    },
+    "type=top": {
+      "model": "brokenknuckles:block/dwarfstone_brick_slab_top"
+    }
+  }
+}

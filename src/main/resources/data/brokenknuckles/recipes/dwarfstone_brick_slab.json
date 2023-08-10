@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "brokenknuckles:dwarfstone_bricks"
+    }
+  },
+  "result": {
+    "count": 6,
+    "item": "brokenknuckles:dwarfstone_brick_slab"
+  }
+}
