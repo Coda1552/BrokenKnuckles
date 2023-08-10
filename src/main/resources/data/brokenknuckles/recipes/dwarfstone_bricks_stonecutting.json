@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "brokenknuckles:dwarfstone"
+  },
+  "result": "brokenknuckles:dwarfstone_bricks"
+}

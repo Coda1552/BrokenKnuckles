@@ -17,7 +17,12 @@ import java.util.function.Supplier;
 
 public class ModBlocks {
     public static DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BrokenKnuckles.MOD_ID);
-
+    public static final RegistryObject<Block> DWARFSTONE = registerBlock("dwarfstone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.DEEPSLATE)));
+    public static final RegistryObject<Block> DWARFSTONE_BRICKS = registerBlock("dwarfstone_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_BRICKS)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.DEEPSLATE_BRICKS)));
     public static final RegistryObject<Block> DWARVEN_STEEL_BLOCK = registerBlock("dwarven_steel_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)
             .strength(50F, 2000F)
             .requiresCorrectToolForDrops()
