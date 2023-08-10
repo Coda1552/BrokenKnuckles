@@ -16,6 +16,6 @@ public class ModEnchantments {
 
     public static final EnchantmentCategory HAMMER = EnchantmentCategory.create("hammer", (item -> item instanceof DwarvenHammerItem));
 
-    public static final RegistryObject<Enchantment> HOLE_DIGGER = ENCHANTMENTS.register("hole_digger",
-                    () -> new HoleDiggerEnchantment(Enchantment.Rarity.RARE, HAMMER, EquipmentSlot.MAINHAND));
+    /*public static final RegistryObject<Enchantment> HOLE_DIGGER = ENCHANTMENTS.register("hole_digger",
+                    () -> new HoleDiggerEnchantment(Enchantment.Rarity.RARE, HAMMER, EquipmentSlot.MAINHAND));*/
 }

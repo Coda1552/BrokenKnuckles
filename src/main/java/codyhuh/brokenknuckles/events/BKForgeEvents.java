@@ -83,7 +83,7 @@ public class BKForgeEvents {
     public static void onHammerUsage(BlockEvent.BreakEvent event) {
         Player player = event.getPlayer();
         ItemStack mainHandItem = player.getMainHandItem();
-        boolean enchanted = hasEnchantment(ModEnchantments.HOLE_DIGGER.get(), mainHandItem);
+        //boolean enchanted = hasEnchantment(ModEnchantments.HOLE_DIGGER.get(), mainHandItem);
 
         if (mainHandItem.getItem() instanceof DwarvenHammerItem hammer && player instanceof ServerPlayer serverPlayer && !player.isCreative()) {
             BlockPos initalBlockPos = event.getPos();
@@ -91,7 +91,7 @@ public class BKForgeEvents {
                 return;
             }
 
-            if (enchanted) {
+            /*if (enchanted) {
                 for (BlockPos pos : DwarvenHammerItem.getBlocksToBeDestroyed(2, initalBlockPos, serverPlayer)) {
                     if(pos == initalBlockPos || !hammer.isCorrectToolForDrops(mainHandItem, event.getLevel().getBlockState(pos))) {
                         continue;
@@ -114,14 +114,24 @@ public class BKForgeEvents {
                     serverPlayer.gameMode.destroyBlock(pos);
                     HARVESTED_BLOCKS.remove(pos);
                 }
-            }
+            }*/
+            for (BlockPos pos : DwarvenHammerItem.getBlocksToBeDestroyed(1, initalBlockPos, serverPlayer)) {
+                if (pos == initalBlockPos || !hammer.isCorrectToolForDrops(mainHandItem, event.getLevel().getBlockState(pos))) {
+                    continue;
+                }
 
+                // Have to add them to a Set otherwise, the same code right here will get called for each block!
+                HARVESTED_BLOCKS.add(pos);
+                serverPlayer.gameMode.destroyBlock(pos);
+                HARVESTED_BLOCKS.remove(pos);
+
+            }
         }
     }
 
-    public static boolean hasEnchantment(Enchantment ench, ItemStack stack) {
+    /*public static boolean hasEnchantment(Enchantment ench, ItemStack stack) {
         return EnchantmentHelper.getEnchantments(stack).containsKey(ench);
-    }
+    }*/
 
     @SubscribeEvent
     public static void deleteControllers(LivingDropsEvent event){
