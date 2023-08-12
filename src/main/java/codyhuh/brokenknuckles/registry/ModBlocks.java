@@ -57,7 +57,7 @@ public class ModBlocks {
             .requiresCorrectToolForDrops()
             .sound(SoundType.GLASS)));
     public static final RegistryObject<Block> MAGIC_BARRIER_HUB_BLOCK = registerBlock("magic_barrier_hub", () -> new MagicBarrierHubBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)
-            .strength(-1.0F, 3600000F)
+            .strength(2.5F, 3600000F)
             .requiresCorrectToolForDrops()
             .sound(SoundType.GLASS)));
 
