@@ -1,6 +1,7 @@
 package codyhuh.brokenknuckles.registry;
 
 import codyhuh.brokenknuckles.BrokenKnuckles;
+import codyhuh.brokenknuckles.common.blocks.DeepSlateChiseledBookshelfBlock;
 import codyhuh.brokenknuckles.common.blocks.MagicBarrierBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -53,6 +54,11 @@ public class ModBlocks {
             .strength(-1.0F, 3600000F)
             .requiresCorrectToolForDrops()
             .sound(SoundType.GLASS)));
+
+    public static final RegistryObject<Block> DEEPSLATE_CHISELED_BOOKSHELF = registerBlock("deepslate_chiseled_bookshelf", () -> new DeepSlateChiseledBookshelfBlock(BlockBehaviour.Properties.copy(Blocks.CHISELED_BOOKSHELF)
+            .requiresCorrectToolForDrops()
+            .noOcclusion()
+            .sound(SoundType.CHISELED_BOOKSHELF)));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
