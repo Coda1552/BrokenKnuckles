@@ -10,7 +10,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.GlassBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.BlockHitResult;
+import org.jetbrains.annotations.Nullable;
 
 public class MagicBarrierBlock extends GlassBlock {
     public MagicBarrierBlock(Properties pProperties) {
@@ -27,5 +29,10 @@ public class MagicBarrierBlock extends GlassBlock {
             }
         }
         return InteractionResult.FAIL;
+    }
+
+    @Override
+    public @Nullable PushReaction getPistonPushReaction(BlockState state) {
+        return PushReaction.DESTROY;
     }
 }

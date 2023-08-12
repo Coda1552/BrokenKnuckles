@@ -9,11 +9,17 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.GlassBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.BlockHitResult;
+import org.jetbrains.annotations.Nullable;
 
 public class MagicBarrierHubBlock extends GlassBlock {
     public MagicBarrierHubBlock(Properties pProperties) {
         super(pProperties);
     }
 
+    @Override
+    public @Nullable PushReaction getPistonPushReaction(BlockState state) {
+        return PushReaction.DESTROY;
+    }
 }
