@@ -4,6 +4,7 @@ import codyhuh.brokenknuckles.BrokenKnuckles;
 import codyhuh.brokenknuckles.common.blocks.DeepSlateChiseledBookshelfBlock;
 import codyhuh.brokenknuckles.common.blocks.MagicBarrierBlock;
 import codyhuh.brokenknuckles.common.blocks.SimpleDirectionalBlock;
+import codyhuh.brokenknuckles.common.blocks.MagicBarrierHubBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -52,6 +53,10 @@ public class ModBlocks {
             .sound(SoundType.NETHERITE_BLOCK)));
 
     public static final RegistryObject<Block> MAGIC_BARRIER_BLOCK = registerBlock("magic_barrier", () -> new MagicBarrierBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)
+            .strength(-1.0F, 3600000F)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.GLASS)));
+    public static final RegistryObject<Block> MAGIC_BARRIER_HUB_BLOCK = registerBlock("magic_barrier_hub", () -> new MagicBarrierHubBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)
             .strength(-1.0F, 3600000F)
             .requiresCorrectToolForDrops()
             .sound(SoundType.GLASS)));

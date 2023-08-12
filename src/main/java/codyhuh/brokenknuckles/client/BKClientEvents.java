@@ -28,6 +28,7 @@ public class BKClientEvents {
     public static void clientSetup(FMLClientSetupEvent e) {
         ItemProperties.register(ModItems.FLINTKNOCK_PISTOL.get(), new ResourceLocation("charged"), (p_275891_, p_275892_, p_275893_, p_275894_) -> CrossbowItem.isCharged(p_275891_) ? 1.0F : 0.0F);
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.MAGIC_BARRIER_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.MAGIC_BARRIER_HUB_BLOCK.get(), RenderType.translucent());
     }
 
     @SubscribeEvent
