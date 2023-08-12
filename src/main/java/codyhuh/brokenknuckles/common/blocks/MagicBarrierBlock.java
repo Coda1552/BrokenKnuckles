@@ -21,7 +21,7 @@ public class MagicBarrierBlock extends GlassBlock {
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if(pPlayer.getMainHandItem().getItem() instanceof ShadowControllerItem){
             pLevel.destroyBlock(pPos, true);
-            pPlayer.addItem(new ItemStack(ModBlocks.MAGIC_BARRIER_BLOCK.get()));
+            //pPlayer.addItem(new ItemStack(ModBlocks.MAGIC_BARRIER_BLOCK.get()));
             return InteractionResult.SUCCESS;
         }
 

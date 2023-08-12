@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "brokenknuckles:block/archive_tile_two",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "brokenknuckles:block/archive_tile_two",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "brokenknuckles:block/archive_tile_two"
+    },
+    "facing=west": {
+      "model": "brokenknuckles:block/archive_tile_two",
+      "y": 90
+    }
+  }
+}

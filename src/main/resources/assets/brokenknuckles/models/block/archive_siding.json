@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "brokenknuckles:block/deepslate_chiseled_bookshelf_bottom",
+    "east": "brokenknuckles:block/deepslate_chiseled_bookshelf_side",
+    "north": "brokenknuckles:block/deepslate_chiseled_bookshelf_side",
+    "particle": "brokenknuckles:block/deepslate_chiseled_bookshelf_side",
+    "south": "brokenknuckles:block/deepslate_chiseled_bookshelf_side",
+    "up": "brokenknuckles:block/deepslate_chiseled_bookshelf_top",
+    "west": "brokenknuckles:block/deepslate_chiseled_bookshelf_side"
+  }
+}

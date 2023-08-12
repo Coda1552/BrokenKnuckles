@@ -3,6 +3,7 @@ package codyhuh.brokenknuckles.registry;
 import codyhuh.brokenknuckles.BrokenKnuckles;
 import codyhuh.brokenknuckles.common.blocks.DeepSlateChiseledBookshelfBlock;
 import codyhuh.brokenknuckles.common.blocks.MagicBarrierBlock;
+import codyhuh.brokenknuckles.common.blocks.SimpleDirectionalBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -59,6 +60,20 @@ public class ModBlocks {
             .requiresCorrectToolForDrops()
             .noOcclusion()
             .sound(SoundType.CHISELED_BOOKSHELF)));
+
+    public static final RegistryObject<Block> ARCHIVE_SIDING = registerBlock("archive_siding", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_TILES)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.DEEPSLATE_TILES)));
+
+    public static final RegistryObject<Block> ARCHIVE_TILE_ONE = registerBlock("archive_tile_one", () -> new SimpleDirectionalBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_TILES)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.DEEPSLATE_TILES)));
+
+    public static final RegistryObject<Block> ARCHIVE_TILE_TWO = registerBlock("archive_tile_two", () -> new SimpleDirectionalBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_TILES)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.DEEPSLATE_TILES)));
+
+
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
