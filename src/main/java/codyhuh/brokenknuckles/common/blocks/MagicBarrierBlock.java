@@ -22,14 +22,14 @@ public class MagicBarrierBlock extends GlassBlock {
 
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if(!pLevel.isClientSide()){
+
             if(pPlayer.getMainHandItem().getItem() instanceof SettingsWandItem){
                 pLevel.destroyBlock(pPos, true);
                 //pPlayer.addItem(new ItemStack(ModBlocks.MAGIC_BARRIER_BLOCK.get()));
                 pPlayer.drop(new ItemStack(ModBlocks.MAGIC_BARRIER_BLOCK.get()), false);
                 return InteractionResult.SUCCESS;
             }
-        }
+
         return InteractionResult.FAIL;
     }
 

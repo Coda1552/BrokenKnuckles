@@ -84,13 +84,13 @@ public class InvisArmorItem extends ArmorItem {
     public @Nullable String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
         boolean flag = slot.equals(EquipmentSlot.CHEST) || slot.equals(EquipmentSlot.HEAD);
         if (on && flag) {
-            return "dwarven_bai:textures/models/armor/invis_layer_1_active.png";
+            return "brokenknuckles:textures/models/armor/invis_layer_1_active.png";
         } else if (!on && flag) {
-            return "dwarven_bai:textures/models/armor/invis_layer_1.png";
+            return "brokenknuckles:textures/models/armor/invis_layer_1.png";
         } else if (!on && (slot.equals(EquipmentSlot.LEGS))) {
-            return "dwarven_bai:textures/models/armor/invis_layer_2.png";
+            return "brokenknuckles:textures/models/armor/invis_layer_2.png";
         } else if (on && (slot.equals(EquipmentSlot.LEGS) || slot.equals(EquipmentSlot.FEET))) {
-            return "dwarven_bai:textures/models/armor/invis_layer_2_active.png";
+            return "brokenknuckles:textures/models/armor/invis_layer_2_active.png";
         } else if (!on && (slot.equals(EquipmentSlot.FEET))) {
             return super.getArmorTexture(stack, entity, slot, type);
         }
