@@ -1,5 +1,6 @@
 package codyhuh.brokenknuckles.common.blocks;
 
+import codyhuh.brokenknuckles.common.items.SettingsWandItem;
 import codyhuh.brokenknuckles.common.items.ShadowControllerItem;
 import codyhuh.brokenknuckles.registry.ModBlocks;
 import net.minecraft.core.BlockPos;
@@ -22,9 +23,10 @@ public class MagicBarrierBlock extends GlassBlock {
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if(!pLevel.isClientSide()){
-            if(pPlayer.getMainHandItem().getItem() instanceof ShadowControllerItem){
+            if(pPlayer.getMainHandItem().getItem() instanceof SettingsWandItem){
                 pLevel.destroyBlock(pPos, true);
                 //pPlayer.addItem(new ItemStack(ModBlocks.MAGIC_BARRIER_BLOCK.get()));
+                pPlayer.drop(new ItemStack(ModBlocks.MAGIC_BARRIER_BLOCK.get()), false);
                 return InteractionResult.SUCCESS;
             }
         }
