@@ -1,22 +1,29 @@
 package codyhuh.brokenknuckles.events;
 
 import codyhuh.brokenknuckles.BrokenKnuckles;
+import codyhuh.brokenknuckles.common.capability.Invisible;
+import codyhuh.brokenknuckles.common.capability.InvisibleProvider;
 import codyhuh.brokenknuckles.common.items.*;
-import codyhuh.brokenknuckles.registry.ModEnchantments;
+import codyhuh.brokenknuckles.network.packet.InvisibleDataSyncS2CPacket;
+import codyhuh.brokenknuckles.network.ModMessages;
 import io.redspace.ironsspellbooks.damage.ISSDamageTypes;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
+import net.minecraftforge.event.AttachCapabilitiesEvent;
+import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -140,6 +147,40 @@ public class BKForgeEvents {
                 if(drop.getItem().getItem() instanceof SettingsWandItem || drop.getItem().getItem() instanceof TempShadowControllerItem || drop.getItem().getItem() instanceof ShadowControllerItem){
                     drop.discard();
                 }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onAttachCapabilitiesPlayer(AttachCapabilitiesEvent<Entity> event) {
+        if(event.getObject() instanceof Player) {
+            if(!event.getObject().getCapability(InvisibleProvider.INVISIBLE).isPresent()) {
+                event.addCapability(new ResourceLocation(BrokenKnuckles.MOD_ID, "properties"), new InvisibleProvider());
+            }
+        }
+    }
+    @SubscribeEvent
+    public static void onPlayerCloned(PlayerEvent.Clone event) {
+        if(event.isWasDeath()) {
+            event.getOriginal().getCapability(InvisibleProvider.INVISIBLE).ifPresent(oldStore -> {
+                event.getOriginal().getCapability(InvisibleProvider.INVISIBLE).ifPresent(newStore -> {
+                    newStore.copyFrom(oldStore);
+                });
+            });
+        }
+    }
+    @SubscribeEvent
+    public static void onRegisterCapabilities(RegisterCapabilitiesEvent event) {
+        event.register(Invisible.class);
+    }
+
+    @SubscribeEvent
+    public static void onPlayerJoinWorld(EntityJoinLevelEvent event){
+        if(!event.getLevel().isClientSide()){
+            if(event.getEntity() instanceof ServerPlayer player){
+                player.getCapability(InvisibleProvider.INVISIBLE).ifPresent(invisible -> {
+                    ModMessages.sendToPlayer(new InvisibleDataSyncS2CPacket(invisible.getInvisibilityState()), player);
+                });
             }
         }
     }

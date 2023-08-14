@@ -32,10 +32,10 @@ public class ModItems {
     public static final RegistryObject<Item> DWARVEN_STEEL_AXE = ITEMS.register("dwarven_steel_axe", () -> new DwarvenAxeItem(ModToolTiers.DWARVEN_STEEL, 3, -3, new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> DWARVEN_STEEL_HAMMER = ITEMS.register("dwarven_steel_hammer", () -> new DwarvenHammerItem(5, -3.5F, ModToolTiers.DWARVEN_STEEL_HAMMER, new Item.Properties().fireResistant()));
 
-    public static final RegistryObject<Item> INVIS_HELMET = ITEMS.register("invis_helmet", () -> new InvisArmorItem(ModArmorMaterials.INVIS, ArmorItem.Type.HELMET, new Item.Properties()));
-    public static final RegistryObject<Item> INVIS_CHESTPLATE = ITEMS.register("invis_chestplate", () -> new InvisArmorItem(ModArmorMaterials.INVIS, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
-    public static final RegistryObject<Item> INVIS_LEGGINGS = ITEMS.register("invis_leggings", () -> new InvisArmorItem(ModArmorMaterials.INVIS, ArmorItem.Type.LEGGINGS, new Item.Properties()));
-    public static final RegistryObject<Item> INVIS_BOOTS = ITEMS.register("invis_boots", () -> new InvisArmorItem(ModArmorMaterials.INVIS, ArmorItem.Type.BOOTS, new Item.Properties()));
+    public static final RegistryObject<Item> MAGIC_CROWN = ITEMS.register("magic_crown", () -> new CultArmorItem(ModArmorMaterials.INVIS, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> MAGIC_CLOAK = ITEMS.register("magic_cloak", () -> new CultArmorItem(ModArmorMaterials.INVIS, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> MAGIC_PANTS = ITEMS.register("magic_pants", () -> new CultArmorItem(ModArmorMaterials.INVIS, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> MAGIC_BOOTS = ITEMS.register("magic_boots", () -> new CultArmorItem(ModArmorMaterials.INVIS, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static final RegistryObject<Item> OCEAN_HELMET = ITEMS.register("ocean_helmet", () -> new OceanArmorItem(ModArmorMaterials.OCEAN, ArmorItem.Type.HELMET, new Item.Properties()));
     public static final RegistryObject<Item> OCEAN_CHESTPLATE = ITEMS.register("ocean_chestplate", () -> new OceanArmorItem(ModArmorMaterials.OCEAN, ArmorItem.Type.CHESTPLATE, new Item.Properties()));

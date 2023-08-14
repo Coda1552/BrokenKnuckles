@@ -31,10 +31,10 @@ public enum ModArmorMaterials implements ArmorMaterial {
 
     INVIS("invis", 20, Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266655_) -> {
         p_266655_.put(ArmorItem.Type.BOOTS, 2);
-        p_266655_.put(ArmorItem.Type.LEGGINGS, 5);
-        p_266655_.put(ArmorItem.Type.CHESTPLATE, 6);
-        p_266655_.put(ArmorItem.Type.HELMET, 2);
-    }), 20, SoundEvents.ARMOR_EQUIP_CHAIN, 0.0F, 0.0F, () -> Ingredient.of(ModItems.MAGIC_CLOTH.get()));
+        p_266655_.put(ArmorItem.Type.LEGGINGS, 6);
+        p_266655_.put(ArmorItem.Type.CHESTPLATE, 7);
+        p_266655_.put(ArmorItem.Type.HELMET, 3);
+    }), 20, SoundEvents.ARMOR_EQUIP_LEATHER, 2.0F, 0.0F, () -> Ingredient.of(ModItems.MAGIC_CLOTH.get()));
 
     private static final EnumMap<ArmorItem.Type, Integer> HEALTH_FUNCTION_FOR_TYPE = Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266653_) -> {
         p_266653_.put(ArmorItem.Type.BOOTS, 13);

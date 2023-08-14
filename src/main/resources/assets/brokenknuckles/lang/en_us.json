@@ -18,11 +18,6 @@
   "item.brokenknuckles.dwarven_steel_leggings": "Dwarven Steel Leggings",
   "item.brokenknuckles.dwarven_steel_boots": "Dwarven Steel Boots",
 
-  "item.brokenknuckles.invis_helmet": "Magician's Cap",
-  "item.brokenknuckles.invis_chestplate": "Thief's Cloak",
-  "item.brokenknuckles.invis_leggings": "Goblin's Greaves",
-  "item.brokenknuckles.invis_boots": "Ancient Sorcerer's Boots",
-
   "item.brokenknuckles.ocean_helmet": "Ocean Dweller's Helmet",
   "item.brokenknuckles.ocean_chestplate": "Ocean Dweller's Chestplate",
   "item.brokenknuckles.ocean_leggings": "Ocean Dweller's Leggings",
@@ -30,6 +25,10 @@
 
   "item.brokenknuckles.magic_cloth": "Magical Cloth",
 
+  "item.brokenknuckles.magic_crown": "Ancient Shadow Crown",
+  "item.brokenknuckles.magic_cloak": "Record Keeper's Cloak",
+  "item.brokenknuckles.magic_pants": "Record Keeper's Leggings",
+  "item.brokenknuckles.magic_boots": "Record Keeper's Boots",
   "item.brokenknuckles.shadow_controller_permanent": "Shadow Controller",
   "item.brokenknuckles.shadow_controller_temp": "One Time Shadow Controller",
   "item.brokenknuckles.barrier_settings_wand": "Barrier Wand",
@@ -65,5 +64,8 @@
   "event.brokenknuckles.damagereduce3": "Three stacks",
   "event.brokenknuckles.damagereduce4": "Four stacks",
   "event.brokenknuckles.enchanted": "Enchanted",
-  "event.brokenknuckles.notenchanted": "Not enchanted"
+  "event.brokenknuckles.notenchanted": "Not enchanted",
+
+  "key.category.brokenknuckles.bloodandiron": "Blood and Iron",
+  "key.brokenknuckles.activate_invis": "Activate Invisibility"
 }
