@@ -48,6 +48,8 @@ public class CultArmorItem extends ArmorItem {
     private static final String LOC_HEAD = new ResourceLocation(BrokenKnuckles.MOD_ID, "textures/models/armor/magic_armor_head.png").toString();
     private static final String LOC_LEGS = new ResourceLocation(BrokenKnuckles.MOD_ID, "textures/models/armor/magic_armor_legs.png").toString();
 
+    private static final String LOC_BOOT = new ResourceLocation(BrokenKnuckles.MOD_ID, "textures/models/armor/magic_armor_boots.png").toString();
+
     public boolean on = false;
     public static Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP = (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
             .put(ModArmorMaterials.INVIS, new MobEffectInstance(MobEffects.INVISIBILITY, 100, 0, false, false)).build();
@@ -123,6 +125,8 @@ public class CultArmorItem extends ArmorItem {
                         return LOC_HEAD;
                     case LEGS:
                         return LOC_LEGS;
+                    case FEET:
+                        return LOC_BOOT;
                     default:
                         return LOC;
                 }
@@ -133,6 +137,8 @@ public class CultArmorItem extends ArmorItem {
                 return LOC_HEAD;
             case LEGS:
                 return LOC_LEGS;
+            case FEET:
+                return LOC_BOOT;
             default:
                 return LOC;
         }
