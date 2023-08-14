@@ -17,6 +17,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.AirItem;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
@@ -68,17 +69,27 @@ public class CultArmorItem extends ArmorItem {
     }
 
     private boolean hasPlayerCorrectArmor(ArmorMaterial mapArmorMaterial, Player player){
-        for (ItemStack armorStack : player.getArmorSlots()) {
-            if (!(armorStack.getItem() instanceof ArmorItem)) {
-                return false;
-            }
+        ArmorItem boots = null;
+        ArmorItem leggings = null;
+        ArmorItem chestplate = null;
+        int count = 0;
+        if(!(player.getInventory().getArmor(0).getItem() instanceof AirItem)){
+            boots = ((ArmorItem) player.getInventory().getArmor(0).getItem());
+            count++;
         }
-        ArmorItem boots = ((ArmorItem) player.getInventory().getArmor(0).getItem());
-        ArmorItem leggings = ((ArmorItem) player.getInventory().getArmor(1).getItem());
-        ArmorItem chestplate = ((ArmorItem) player.getInventory().getArmor(2).getItem());
-
-
-        return boots.getMaterial() == mapArmorMaterial && leggings.getMaterial() == mapArmorMaterial && chestplate.getMaterial() == mapArmorMaterial;
+        if(!(player.getInventory().getArmor(1).getItem() instanceof AirItem)){
+            leggings = ((ArmorItem) player.getInventory().getArmor(1).getItem());
+            count++;
+        }
+        if(!(player.getInventory().getArmor(2).getItem() instanceof AirItem)){
+            chestplate = ((ArmorItem) player.getInventory().getArmor(2).getItem());
+            count++;
+        }
+        if(count == 3){
+            return boots.getMaterial() == mapArmorMaterial && leggings.getMaterial() == mapArmorMaterial && chestplate.getMaterial() == mapArmorMaterial;
+        } else {
+            return false;
+        }
     }
     private boolean hasRequiredArmor(Player player){
         ItemStack chest = player.getInventory().getArmor(2);
@@ -102,17 +113,28 @@ public class CultArmorItem extends ArmorItem {
 
     @Override
     public @Nullable String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-        if(!on){
-            switch (slot) {
-                case HEAD:
-                    return LOC_HEAD;
-                case LEGS:
-                    return LOC_LEGS;
-                default:
-                    return LOC;
+
+        if(entity instanceof Player player) {
+            if(on && hasPlayerCorrectArmor(ModArmorMaterials.INVIS, player)){
+                return "brokenknuckles:textures/models/armor/invis_layer_2_active.png";
+            } else {
+                switch (slot) {
+                    case HEAD:
+                        return LOC_HEAD;
+                    case LEGS:
+                        return LOC_LEGS;
+                    default:
+                        return LOC;
+                }
             }
-        } else {
-            return "brokenknuckles:textures/models/armor/invis_layer_2_active.png";
+        }
+        switch (slot) {
+            case HEAD:
+                return LOC_HEAD;
+            case LEGS:
+                return LOC_LEGS;
+            default:
+                return LOC;
         }
 
     }
