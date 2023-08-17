@@ -3,6 +3,11 @@ package codyhuh.brokenknuckles.registry;
 import codyhuh.brokenknuckles.BrokenKnuckles;
 import codyhuh.brokenknuckles.common.blocks.*;
 import net.minecraft.core.Direction;
+import codyhuh.brokenknuckles.common.blocks.DeepSlateChiseledBookshelfBlock;
+import codyhuh.brokenknuckles.common.blocks.MagicBarrierBlock;
+import codyhuh.brokenknuckles.common.blocks.SimpleDirectionalBlock;
+import codyhuh.brokenknuckles.common.blocks.MagicBarrierHubBlock;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -18,6 +23,7 @@ import java.util.function.Supplier;
 
 public class ModBlocks {
     public static DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BrokenKnuckles.MOD_ID);
+
     private static RotatedPillarBlock log(MapColor pTopMapColor, MapColor pSideMapColor) {
         return new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
             return p_152624_.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? pTopMapColor : pSideMapColor;
@@ -52,6 +58,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> DWARFSTONE_BRICK_WALL = registerBlock("dwarfstone_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_BRICK_WALL)
             .requiresCorrectToolForDrops()
             .sound(SoundType.DEEPSLATE)));
+
     public static final RegistryObject<Block> DWARVEN_STEEL_BLOCK = registerBlock("dwarven_steel_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)
             .strength(50F, 2000F)
             .requiresCorrectToolForDrops()
@@ -61,6 +68,7 @@ public class ModBlocks {
             .strength(-1.0F, 3600000F)
             .requiresCorrectToolForDrops()
             .sound(SoundType.GLASS)));
+
     public static final RegistryObject<Block> MAGIC_BARRIER_HUB_BLOCK = registerBlock("magic_barrier_hub", () -> new MagicBarrierHubBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)
             .strength(2.5F, 3600000F)
             .requiresCorrectToolForDrops()
@@ -98,10 +106,16 @@ public class ModBlocks {
     public static final RegistryObject<Block> ASH_LOG = registerBlock("ash_log", () -> log( MapColor.WOOD, MapColor.PODZOL));
 
 
+    public static final RegistryObject<Block> FUZZILION = registerBlock("fuzzilion", () -> new FlowerBlock(() -> MobEffects.REGENERATION, 120, BlockBehaviour.Properties.copy(Blocks.DANDELION)
+            .sound(SoundType.FLOWERING_AZALEA)));
 
+    public static final RegistryObject<Block> FUZZILION_STEM = registerBlock("humongous_fuzzilion_stem", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.MANGROVE_LOG)));
+    public static final RegistryObject<Block> FUZZILION_CAP = registerBlock("humongous_fuzzilion_cap", () -> new Block(BlockBehaviour.Properties.copy(Blocks.MANGROVE_PLANKS)));
+    public static final RegistryObject<Block> FUZZILION_FUZZ = registerBlock("humongous_fuzzilion_fuzz", () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
+
         if(name.equals( "dwarven_steel_block") || name .equals( "magic_barrier") || name.equals("magic_barrier_hub")){
             registerBlockItemWithFireRes(name, toReturn);
         } else {

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "brokenknuckles:block/humongous_fuzzilion_stem",
+    "side": "brokenknuckles:block/humongous_fuzzilion_stem"
+  }
+}

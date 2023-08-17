@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "brokenknuckles:block/humongous_fuzzilion_cap"
+  }
+}
