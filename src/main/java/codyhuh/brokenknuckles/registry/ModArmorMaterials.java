@@ -28,7 +28,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
 
     INVIS("invis", 37, armorMap(), 20, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F,
             () -> {return Ingredient.of(new ItemLike[]{(ItemLike) ModItems.MAGIC_CLOTH.get()});
-    }, Map.of((Attribute)AttributeRegistry.MAX_MANA.get(), new AttributeModifier("Max Mana", 75.0, AttributeModifier.Operation.ADDITION), (Attribute)AttributeRegistry.SPELL_POWER.get(), new AttributeModifier("Spell Power", 0.05, AttributeModifier.Operation.MULTIPLY_BASE),(Attribute)AttributeRegistry.COOLDOWN_REDUCTION.get(), new AttributeModifier("Cooldown Reduction", 0.05, AttributeModifier.Operation.MULTIPLY_BASE)));
+    }, Map.of((Attribute)AttributeRegistry.MAX_MANA.get(), new AttributeModifier("Max Mana", 75.0, AttributeModifier.Operation.ADDITION), (Attribute)AttributeRegistry.SPELL_POWER.get(), new AttributeModifier("Spell Power", 0.05, AttributeModifier.Operation.MULTIPLY_BASE),(Attribute)AttributeRegistry.COOLDOWN_REDUCTION.get(), new AttributeModifier("Cooldown Reduction", 0.05, AttributeModifier.Operation.MULTIPLY_BASE), (Attribute)AttributeRegistry.CAST_TIME_REDUCTION.get(), new AttributeModifier("Cast Time Reduction", 0.05, AttributeModifier.Operation.MULTIPLY_BASE)));
 
 
     private static final EnumMap<ArmorItem.Type, Integer> HEALTH_FUNCTION_FOR_TYPE = Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266653_) -> {
