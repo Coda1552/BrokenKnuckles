@@ -32,12 +32,16 @@
   "item.brokenknuckles.shadow_controller_permanent": "Shadow Controller",
   "item.brokenknuckles.shadow_controller_temp": "One Time Shadow Controller",
   "item.brokenknuckles.barrier_settings_wand": "Barrier Wand",
+  "item.brokenknuckles.magic_weapon": "Shadow Catalyst",
   "block.brokenknuckles.magic_barrier": "Magic Barrier Block",
   "block.brokenknuckles.magic_barrier_hub": "Magic Barrier Hub",
   "block.brokenknuckles.deepslate_chiseled_bookshelf": "Deepslate Chiseled Bookshelf",
   "block.brokenknuckles.archive_siding": "Archive Siding",
   "block.brokenknuckles.archive_tile_one": "Light Archive Tile",
   "block.brokenknuckles.archive_tile_two": "Dark Archive Tile",
+  "block.brokenknuckles.altar_display": "Altar Display Block",
+  "block.brokenknuckles.ash_old": "Mineral Ash",
+  "block.brokenknuckles.ash_mid": "Weathered Ash",
 
   "block.brokenknuckles.dwarven_steel_block": "Dwarven Steel Block",
   "block.brokenknuckles.dwarfstone": "Dwarfstone",
@@ -48,6 +52,7 @@
   "block.brokenknuckles.dwarfstone_brick_stairs": "Dwarfstone Brick Stairs",
   "block.brokenknuckles.dwarfstone_brick_slab": "Dwarfstone Brick Slab",
   "block.brokenknuckles.dwarfstone_brick_wall": "Dwarfstone Brick Wall",
+  "block.brokenknuckles.ash_log": "Ancient Ash Log",
 
   "enchantment.brokenknuckles.hole_digger": "5x5 Hole Digger",
 

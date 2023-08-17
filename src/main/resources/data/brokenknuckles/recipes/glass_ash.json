@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "brokenknuckles:ash_mid"
+  },
+  "result": "minecraft:glass",
+  "experience": 0,
+  "cookingtime": 50
+}

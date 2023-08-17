@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " y ",
+    "xxx",
+    "zzz"
+  ],
+  "key": {
+    "y": {
+      "item": "brokenknuckles:magic_weapon"
+    },
+    "x": {
+      "item": "brokenknuckles:ash_mid"
+    },
+    "z": {
+      "item": "brokenknuckles:ash_old"
+    }
+  },
+  "result": {
+    "item": "brokenknuckles:altar_display"
+  }
+}

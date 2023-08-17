@@ -2,6 +2,7 @@ package codyhuh.brokenknuckles.registry;
 
 import codyhuh.brokenknuckles.BrokenKnuckles;
 import codyhuh.brokenknuckles.common.blocks.DeepSlateChiseledBookshelfBlock;
+import codyhuh.brokenknuckles.common.blocks.entity.AltarDisplayBlockEntity;
 import codyhuh.brokenknuckles.common.blocks.entity.DeepSlateChiseledBookshelfBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.ChiseledBookShelfBlockEntity;
@@ -20,6 +21,10 @@ public class ModBlockEntities {
                         BlockEntityType.Builder.of(ChiseledBookShelfBlockEntity::new,
                                 ModBlocks.DEEPSLATE_CHISELED_BOOKSHELF.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<AltarDisplayBlockEntity>> ALTAR_DISPLAY_BE =
+            BLOCK_ENTITIES.register("altar_display_block_entity", () ->
+                    BlockEntityType.Builder.of(AltarDisplayBlockEntity::new,
+                            ModBlocks.ALTAR_DISPLAY.get()).build(null));
 
         public static void register(IEventBus eventBus) {
             BLOCK_ENTITIES.register(eventBus);

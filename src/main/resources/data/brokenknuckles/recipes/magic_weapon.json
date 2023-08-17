@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "yyy",
+    "zxy",
+    "zzz"
+  ],
+  "key": {
+    "y": {
+      "item": "brokenknuckles:archive_tile_two"
+    },
+    "x": {
+      "item": "minecraft:snowball"
+    },
+    "z": {
+      "item": "brokenknuckles:ash_mid"
+    }
+  },
+  "result": {
+    "item": "brokenknuckles:magic_weapon"
+  }
+}

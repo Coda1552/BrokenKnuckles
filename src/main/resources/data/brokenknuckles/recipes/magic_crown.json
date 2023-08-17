@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "y y",
+    "exe",
+    "zzz"
+  ],
+  "key": {
+    "y": {
+      "item": "brokenknuckles:ash_mid"
+    },
+    "x": {
+      "item": "brokenknuckles:magic_weapon"
+    },
+    "z": {
+      "item": "brokenknuckles:ash_old"
+    },
+    "e": {
+      "item": "brokenknuckles:magic_cloth"
+    }
+  },
+  "result": {
+    "item": "brokenknuckles:magic_crown"
+  }
+}

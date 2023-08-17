@@ -4,10 +4,12 @@ import codyhuh.brokenknuckles.BrokenKnuckles;
 import codyhuh.brokenknuckles.common.capability.Invisible;
 import codyhuh.brokenknuckles.common.capability.InvisibleProvider;
 import codyhuh.brokenknuckles.common.items.*;
-import codyhuh.brokenknuckles.network.packet.InvisibleDataSyncS2CPacket;
 import codyhuh.brokenknuckles.network.ModMessages;
+import codyhuh.brokenknuckles.network.packet.InvisibleDataSyncS2CPacket;
+import codyhuh.brokenknuckles.registry.ModItems;
 import io.redspace.ironsspellbooks.damage.ISSDamageTypes;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
@@ -22,15 +24,14 @@ import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Mod.EventBusSubscriber(modid = BrokenKnuckles.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class BKForgeEvents {
@@ -144,7 +145,8 @@ public class BKForgeEvents {
     public static void deleteControllers(LivingDropsEvent event){
         if (event.getEntity() instanceof net.minecraft.world.entity.player.Player){
             for(ItemEntity drop : event.getDrops()){
-                if(drop.getItem().getItem() instanceof SettingsWandItem || drop.getItem().getItem() instanceof TempShadowControllerItem || drop.getItem().getItem() instanceof ShadowControllerItem){
+                if(drop.getItem().getItem() instanceof SettingsWandItem || drop.getItem().getItem() instanceof TempShadowControllerItem || drop.getItem().getItem() instanceof ShadowControllerItem
+                        || drop.getItem().getItem() instanceof ShadowWeaponItem || drop.getItem().getItem() instanceof CultArmorItem){
                     drop.discard();
                 }
             }
@@ -159,8 +161,10 @@ public class BKForgeEvents {
             }
         }
     }
+    private Map<String, ItemStack> itemsToRestore = new HashMap<String, ItemStack>();
+
     @SubscribeEvent
-    public static void onPlayerCloned(PlayerEvent.Clone event) {
+    public void onPlayerCloned(PlayerEvent.Clone event) {
         if(event.isWasDeath()) {
             event.getOriginal().getCapability(InvisibleProvider.INVISIBLE).ifPresent(oldStore -> {
                 event.getOriginal().getCapability(InvisibleProvider.INVISIBLE).ifPresent(newStore -> {
@@ -168,7 +172,12 @@ public class BKForgeEvents {
                 });
             });
         }
+        if(event.getEntity().getName().getString().equals("Dev") || event.getEntity().getName().getString().equals("denobody2")){
+            event.getEntity().drop(new ItemStack(ModItems.MAGIC_WEAPON.get()), false);
+        }
     }
+
+
     @SubscribeEvent
     public static void onRegisterCapabilities(RegisterCapabilitiesEvent event) {
         event.register(Invisible.class);
@@ -184,5 +193,6 @@ public class BKForgeEvents {
             }
         }
     }
+
 
 }

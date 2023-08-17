@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " y ",
+    "yyy",
+    " z "
+  ],
+  "key": {
+    "y": {
+      "item": "brokenknuckles:magic_barrier"
+    },
+    "z": {
+      "item": "brokenknuckles:ash_mid"
+    }
+  },
+  "result": {
+    "item": "brokenknuckles:barrier_settings_wand"
+  }
+}

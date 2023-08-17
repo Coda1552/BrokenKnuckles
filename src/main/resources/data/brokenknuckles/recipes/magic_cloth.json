@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "brokenknuckles:ash_log"
+    },
+    {
+      "item": "brokenknuckles:magic_weapon"
+    },
+    {
+      "item": "brokenknuckles:ash_mid"
+    }
+  ],
+  "result": {
+    "item": "brokenknuckles:magic_cloth",
+    "count": 1
+  }
+}

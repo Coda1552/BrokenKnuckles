@@ -1,14 +1,14 @@
 package codyhuh.brokenknuckles.registry;
 
 import codyhuh.brokenknuckles.BrokenKnuckles;
-import codyhuh.brokenknuckles.common.blocks.DeepSlateChiseledBookshelfBlock;
-import codyhuh.brokenknuckles.common.blocks.MagicBarrierBlock;
-import codyhuh.brokenknuckles.common.blocks.SimpleDirectionalBlock;
-import codyhuh.brokenknuckles.common.blocks.MagicBarrierHubBlock;
+import codyhuh.brokenknuckles.common.blocks.*;
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -18,6 +18,11 @@ import java.util.function.Supplier;
 
 public class ModBlocks {
     public static DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BrokenKnuckles.MOD_ID);
+    private static RotatedPillarBlock log(MapColor pTopMapColor, MapColor pSideMapColor) {
+        return new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor((p_152624_) -> {
+            return p_152624_.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? pTopMapColor : pSideMapColor;
+        }).instrument(NoteBlockInstrument.BASS).strength(2.5F).sound(SoundType.WOOD));
+    }
     public static final RegistryObject<Block> DWARFSTONE = registerBlock("dwarfstone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)
             .requiresCorrectToolForDrops()
             .sound(SoundType.DEEPSLATE)));
@@ -78,11 +83,26 @@ public class ModBlocks {
             .requiresCorrectToolForDrops()
             .sound(SoundType.DEEPSLATE_TILES)));
 
+    public static final RegistryObject<Block> ALTAR_DISPLAY = registerBlock("altar_display", () -> new AltarDisplayBlock(BlockBehaviour.Properties.copy(Blocks.POLISHED_DEEPSLATE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.POLISHED_DEEPSLATE)
+            .noOcclusion()
+            .lightLevel((pSource) -> {
+                return 8;
+            })));
+
+    public static final RegistryObject<Block> ASH_OLD = registerBlock("ash_old", () -> new FallingBlock(BlockBehaviour.Properties.copy(Blocks.SAND)
+            .sound(SoundType.SAND)));
+    public static final RegistryObject<Block> ASH_MID = registerBlock("ash_mid", () -> new FallingBlock(BlockBehaviour.Properties.copy(Blocks.SAND)
+            .sound(SoundType.SAND)));
+    public static final RegistryObject<Block> ASH_LOG = registerBlock("ash_log", () -> log( MapColor.WOOD, MapColor.PODZOL));
+
+
 
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
-        if(name.equals( "dwarven_steel_block") || name .equals( "magic_barrier")){
+        if(name.equals( "dwarven_steel_block") || name .equals( "magic_barrier") || name.equals("magic_barrier_hub")){
             registerBlockItemWithFireRes(name, toReturn);
         } else {
             registerBlockItem(name, toReturn);

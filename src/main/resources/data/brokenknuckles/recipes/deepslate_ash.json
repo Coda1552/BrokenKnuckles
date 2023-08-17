@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xy",
+    "yx"
+  ],
+  "key": {
+    "y": {
+      "item": "brokenknuckles:ash_old"
+    },
+    "x": {
+      "item": "brokenknuckles:ash_mid"
+    }
+  },
+  "result": {
+    "item": "minecraft:deepslate",
+    "count": 16
+  }
+}

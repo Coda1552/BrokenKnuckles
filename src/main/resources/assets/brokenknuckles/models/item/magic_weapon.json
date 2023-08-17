@@ -1,0 +1,22 @@
+{
+  "parent": "minecraft:item/handheld",
+  "loader": "forge:separate_transforms",
+  "base": {
+    "parent": "brokenknuckles:item/magic_weapon_3d"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "brokenknuckles:item/magic_weapon_gui"
+    },
+    "ground": {
+      "parent": "brokenknuckles:item/magic_weapon_gui"
+    },
+    "fixed": {
+      "parent": "brokenknuckles:item/magic_weapon_gui"
+    }
+
+  }
+
+
+
+}
