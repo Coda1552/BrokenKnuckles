@@ -20,12 +20,10 @@ import net.minecraft.world.level.Level;
 public class AltarDisplayRenderer<T extends AltarDisplayBlockEntity> implements BlockEntityRenderer<T> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(BrokenKnuckles.MOD_ID, "textures/block/altar_display.png");
     private final ItemRenderer itemRenderer;
-    private final EntityRenderDispatcher entityRenderer;
     private static AltarDisplayModel altarDisplay;
 
     public AltarDisplayRenderer(BlockEntityRendererProvider.Context context) {
         this.itemRenderer = context.getItemRenderer();
-        this.entityRenderer = context.getEntityRenderer();
         altarDisplay = new AltarDisplayModel(context.bakeLayer(BKModelLayers.ALTAR_DISPLAY));
     }
 
