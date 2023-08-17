@@ -5,7 +5,7 @@
   "item.brokenknuckles.flintknock_pistol": "Flintknock Pistol",
   "item.brokenknuckles.bullet": "Bullet",
 
-  "item.brokenknuckles.dandy_deer_spawn_egg": "Dandy Deer Spawn Egg",
+  "item.brokenknuckles.dandy_deer_spawn_egg": "Dandiloo Spawn Egg",
   "item.brokenknuckles.sea_beak_spawn_egg": "Sea Beak Spawn Egg",
 
   "item.brokenknuckles.dwarven_armor_parts": "Dwarven Steel",
@@ -48,11 +48,15 @@
   "block.brokenknuckles.dwarfstone_brick_stairs": "Dwarfstone Brick Stairs",
   "block.brokenknuckles.dwarfstone_brick_slab": "Dwarfstone Brick Slab",
   "block.brokenknuckles.dwarfstone_brick_wall": "Dwarfstone Brick Wall",
+  "block.brokenknuckles.fuzzilion": "Fuzzilion",
+  "block.brokenknuckles.humongous_fuzzilion_stem": "Humongous Fuzzilion Stem",
+  "block.brokenknuckles.humongous_fuzzilion_cap": "Humongous Fuzzilion Cap",
+  "block.brokenknuckles.humongous_fuzzilion_fuzz": "Humongous Fuzzilion Fuzz",
 
   "enchantment.brokenknuckles.hole_digger": "5x5 Hole Digger",
 
   "entity.brokenknuckles.bullet": "Bullet",
-  "entity.brokenknuckles.dany_deer": "Dandy Deer",
+  "entity.brokenknuckles.dandy_deer": "Dandiloo",
   "entity.brokenknuckles.sea_beak": "Sea Beak",
 
   "sound.brokenknuckles.flintknock_shoot": "Flintknock fires",

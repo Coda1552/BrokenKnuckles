@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "brokenknuckles:block/fuzzilion"
+  },
+  "render_type": "cutout"
+}

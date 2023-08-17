@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "brokenknuckles:block/humongous_fuzzilion_stem_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "brokenknuckles:block/humongous_fuzzilion_stem"
+    },
+    "axis=z": {
+      "model": "brokenknuckles:block/humongous_fuzzilion_stem_horizontal",
+      "x": 90
+    }
+  }
+}
