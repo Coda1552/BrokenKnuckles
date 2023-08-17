@@ -22,12 +22,10 @@ public class AltarDisplayRenderer<T extends AltarDisplayBlockEntity> implements 
 
 
     private final ItemRenderer itemRenderer;
-    private final EntityRenderDispatcher entityRenderer;
     private static AltarDisplayModel altarDisplay;
 
     public AltarDisplayRenderer(BlockEntityRendererProvider.Context context) {
         this.itemRenderer = context.getItemRenderer();
-        this.entityRenderer = context.getEntityRenderer();
         altarDisplay = new AltarDisplayModel(context.bakeLayer(BKModelLayers.ALTAR_DISPLAY));
     }
     @Override
