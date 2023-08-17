@@ -21,8 +21,9 @@ public class BrokenKnuckles {
         ModEnchantments.ENCHANTMENTS.register(bus);
         ModSounds.SOUNDS.register(bus);
         ModEntities.ENTITIES.register(bus);
-        ModBlockEntities.register(bus);
+        ModBlockEntities.BLOCK_ENTITIES.register(bus);
         bus.addListener(this::commonSetup);
+
         MinecraftForge.EVENT_BUS.register(this);    
     }
 

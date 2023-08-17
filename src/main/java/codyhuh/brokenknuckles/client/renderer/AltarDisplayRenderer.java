@@ -19,8 +19,6 @@ import net.minecraft.world.level.Level;
 
 public class AltarDisplayRenderer<T extends AltarDisplayBlockEntity> implements BlockEntityRenderer<T> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(BrokenKnuckles.MOD_ID, "textures/block/altar_display.png");
-
-
     private final ItemRenderer itemRenderer;
     private final EntityRenderDispatcher entityRenderer;
     private static AltarDisplayModel altarDisplay;
@@ -30,6 +28,7 @@ public class AltarDisplayRenderer<T extends AltarDisplayBlockEntity> implements 
         this.entityRenderer = context.getEntityRenderer();
         altarDisplay = new AltarDisplayModel(context.bakeLayer(BKModelLayers.ALTAR_DISPLAY));
     }
+
     @Override
     public void render(T pBlockEntity, float pPartialTick, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
         Level world = pBlockEntity.getLevel();
@@ -47,7 +46,6 @@ public class AltarDisplayRenderer<T extends AltarDisplayBlockEntity> implements 
             pPoseStack.scale(0.5F, 0.5F, 0.5F);
             pPoseStack.mulPose(Axis.YP.rotationDegrees(tick % 360.0F));
             pPoseStack.mulPose(Axis.XP.rotationDegrees(-180.0F));
-
 
             this.itemRenderer.renderStatic(pBlockEntity.getItem(0), ItemDisplayContext.FIXED, pPackedLight, OverlayTexture.NO_OVERLAY, pPoseStack, pBuffer, pBlockEntity.getLevel(), pPackedOverlay);
             pPoseStack.popPose();

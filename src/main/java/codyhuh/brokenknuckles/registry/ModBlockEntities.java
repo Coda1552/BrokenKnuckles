@@ -13,21 +13,16 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModBlockEntities {
 
-        public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
-                DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, BrokenKnuckles.MOD_ID);
+    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
+            DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, BrokenKnuckles.MOD_ID);
 
-        public static final RegistryObject<BlockEntityType<ChiseledBookShelfBlockEntity>> GEM_EMPOWERING_STATION_BE =
-                BLOCK_ENTITIES.register("deepslate_chiseled_bookshelf_block_entity", () ->
-                        BlockEntityType.Builder.of(ChiseledBookShelfBlockEntity::new,
-                                ModBlocks.DEEPSLATE_CHISELED_BOOKSHELF.get()).build(null));
+    public static final RegistryObject<BlockEntityType<ChiseledBookShelfBlockEntity>> GEM_EMPOWERING_STATION_BE =
+            BLOCK_ENTITIES.register("deepslate_chiseled_bookshelf_block_entity", () ->
+                    BlockEntityType.Builder.of(ChiseledBookShelfBlockEntity::new,
+                            ModBlocks.DEEPSLATE_CHISELED_BOOKSHELF.get()).build(null));
 
     public static final RegistryObject<BlockEntityType<AltarDisplayBlockEntity>> ALTAR_DISPLAY_BE =
             BLOCK_ENTITIES.register("altar_display_block_entity", () ->
                     BlockEntityType.Builder.of(AltarDisplayBlockEntity::new,
                             ModBlocks.ALTAR_DISPLAY.get()).build(null));
-
-        public static void register(IEventBus eventBus) {
-            BLOCK_ENTITIES.register(eventBus);
-        }
-
 }
