@@ -196,6 +196,7 @@ public class ShadowWeaponItem extends Item implements GeoItem, GeoAnimatable{
     @Override
     public void inventoryTick(ItemStack p_41404_, Level pLevel, Entity p_41406_, int p_41407_, boolean p_41408_) {
         if (p_41406_ instanceof Player player) {
+                String caster = player.getUUID().toString();
                 if(effectOneOn){
                     int q1= (int)(Math.random()*4);
                     int q2= (int)(Math.random()*9);
@@ -213,21 +214,24 @@ public class ShadowWeaponItem extends Item implements GeoItem, GeoAnimatable{
                     AABB aabb = (new AABB(player.blockPosition().below())).inflate(11.0D);
                     //List<LivingEntity> Entities3 = pLevel.getNearbyEntities(LivingEntity.class, TargetingConditions.DEFAULT.range(5).ignoreInvisibilityTesting().ignoreLineOfSight(), player, aabb);
                     List<LivingEntity>  nearbyEntities = pLevel.getEntitiesOfClass(LivingEntity.class, aabb);
+                    List<Player>  nearbyPlayers = pLevel.getEntitiesOfClass(Player.class, aabb);
                     //player.sendSystemMessage(Component.literal("These Entities Are within Range!" + nearbyEntities + ""));
                     for(LivingEntity entity : nearbyEntities){
                         if (entity.isAlive() && !entity.isRemoved()) {
-                            if(entity instanceof Player player2){
-                                if(!((player.getInventory().getArmor(0).getItem() instanceof CultArmorItem && player.getInventory().getArmor(1).getItem() instanceof CultArmorItem && player.getInventory().getArmor(2).getItem() instanceof CultArmorItem) || (player.getInventory().getArmor(3).getItem() instanceof CultArmorItem))){
-                                    if(!player2.equals(player)){
-                                        entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 200, (int) (Math.random()*2)));
-                                        entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2));
-                                        entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 50, 0));
-                                    }
-                                }
-                            } else {
+                            if(!(entity instanceof Player)){
                                 entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 300, (int) (Math.random()*2)));
                                 entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 150, 2));
                                 entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 50, 0));
+                            }
+                        }
+                    }
+                    for(Player player2 : nearbyPlayers){
+                        if(!((player2.getInventory().getArmor(0).getItem() instanceof CultArmorItem && player2.getInventory().getArmor(1).getItem() instanceof CultArmorItem && player2.getInventory().getArmor(2).getItem() instanceof CultArmorItem) || (player2.getInventory().getArmor(3).getItem() instanceof CultArmorItem))){
+                            if(!(player2.getUUID().toString().equals(caster))){
+                                player2.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 200, (int) (Math.random()*2), false, true));
+                                player2.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 2, false, true));
+                                player2.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 200, 0, false, true));
+                                player2.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 200, 0, false, true));
                             }
                         }
                     }

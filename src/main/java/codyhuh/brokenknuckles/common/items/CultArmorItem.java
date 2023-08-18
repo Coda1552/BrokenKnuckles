@@ -10,6 +10,8 @@ import codyhuh.brokenknuckles.registry.ModArmorMaterials;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
+import io.redspace.ironsspellbooks.effect.TrueInvisibilityEffect;
+import io.redspace.ironsspellbooks.registries.MobEffectRegistry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.resources.ResourceLocation;
@@ -145,7 +147,7 @@ public class CultArmorItem extends ArmorItem {
                 on = invisible.getInvisibilityState();
             });
             if(on && hasPlayerCorrectArmor(mapArmorMaterial, player)){
-                player.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 2, 0, false, false));
+                player.addEffect(new MobEffectInstance(MobEffectRegistry.TRUE_INVISIBILITY.get(), 2, 0, false, false));
             }
         }
     }

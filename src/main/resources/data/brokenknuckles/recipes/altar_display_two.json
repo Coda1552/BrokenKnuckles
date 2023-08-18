@@ -1,19 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "xy",
-    "yx"
+    " y ",
+    "xxx",
+    "zzz"
   ],
   "key": {
     "y": {
-      "item": "brokenknuckles:ash_log"
+      "item": "brokenknuckles:diamond"
     },
     "x": {
       "item": "brokenknuckles:ash_mid"
+    },
+    "z": {
+      "item": "brokenknuckles:ash_old"
     }
   },
   "result": {
-    "item": "brokenknuckles:ash_old",
-    "count" : 4
+    "item": "brokenknuckles:altar_display"
   }
 }
