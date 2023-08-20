@@ -2,9 +2,6 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "brokenknuckles:magic_weapon"
-    },
-    {
       "item": "minecraft:oak_log"
     },
     {
