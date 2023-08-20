@@ -1,7 +1,7 @@
 package codyhuh.brokenknuckles.events;
 
 import codyhuh.brokenknuckles.BrokenKnuckles;
-import codyhuh.brokenknuckles.common.capability.Invisible;
+import codyhuh.brokenknuckles.common.capability.InvisibleData;
 import codyhuh.brokenknuckles.common.capability.InvisibleProvider;
 import codyhuh.brokenknuckles.common.items.*;
 import codyhuh.brokenknuckles.network.ModMessages;
@@ -9,7 +9,6 @@ import codyhuh.brokenknuckles.network.packet.InvisibleDataSyncS2CPacket;
 import codyhuh.brokenknuckles.registry.ModItems;
 import io.redspace.ironsspellbooks.damage.ISSDamageTypes;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
@@ -24,7 +23,6 @@ import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
-import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.level.BlockEvent;
@@ -180,7 +178,7 @@ public class BKForgeEvents {
 
     @SubscribeEvent
     public static void onRegisterCapabilities(RegisterCapabilitiesEvent event) {
-        event.register(Invisible.class);
+        event.register(InvisibleData.class);
     }
 
     @SubscribeEvent

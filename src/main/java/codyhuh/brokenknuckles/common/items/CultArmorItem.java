@@ -2,15 +2,12 @@ package codyhuh.brokenknuckles.common.items;
 
 import codyhuh.brokenknuckles.BrokenKnuckles;
 import codyhuh.brokenknuckles.client.BKModelLayers;
-import codyhuh.brokenknuckles.client.models.DwarvenSteelArmorModel;
 import codyhuh.brokenknuckles.client.models.MagicArmorModel;
-import codyhuh.brokenknuckles.common.capability.Invisible;
 import codyhuh.brokenknuckles.common.capability.InvisibleProvider;
 import codyhuh.brokenknuckles.registry.ModArmorMaterials;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
-import io.redspace.ironsspellbooks.effect.TrueInvisibilityEffect;
 import io.redspace.ironsspellbooks.registries.MobEffectRegistry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HumanoidModel;

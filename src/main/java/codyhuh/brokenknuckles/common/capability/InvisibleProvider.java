@@ -13,17 +13,18 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nullable;
 
 public class InvisibleProvider implements ICapabilityProvider, INBTSerializable<CompoundTag> {
-    public static Capability<Invisible> INVISIBLE = CapabilityManager.get(new CapabilityToken<Invisible>() { });
-    private Invisible invisible = null;
-    private final LazyOptional<Invisible> optional = LazyOptional.of(this::createInvisible);
+    public static Capability<InvisibleData> INVISIBLE = CapabilityManager.get(new CapabilityToken<InvisibleData>() { });
+    private InvisibleData invisible = null;
+    private final LazyOptional<InvisibleData> optional = LazyOptional.of(this::createInvisible);
 
-    private Invisible createInvisible() {
+    private InvisibleData createInvisible() {
         if(this.invisible == null) {
-            this.invisible = new Invisible();
+            this.invisible = new InvisibleData();
         }
 
         return this.invisible;
     }
+
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
         if(cap == INVISIBLE) {
@@ -32,16 +33,17 @@ public class InvisibleProvider implements ICapabilityProvider, INBTSerializable<
 
         return LazyOptional.empty();
     }
+
     @Override
     public CompoundTag serializeNBT() {
         CompoundTag nbt = new CompoundTag();
         createInvisible().saveNBTData(nbt);
         return nbt;
     }
+
     @Override
     public void deserializeNBT(CompoundTag nbt) {
         createInvisible().loadNBTData(nbt);
     }
-
 
 }

@@ -2,9 +2,8 @@ package codyhuh.brokenknuckles.common.capability;
 
 import net.minecraft.nbt.CompoundTag;
 
-public class Invisible {
+public class InvisibleData {
     private boolean invisible;
-
 
     public boolean getInvisibilityState() {
         return invisible;
@@ -14,7 +13,7 @@ public class Invisible {
         invisible = !this.invisible;
     }
 
-    public void copyFrom(Invisible source) {
+    public void copyFrom(InvisibleData source) {
         this.invisible = source.invisible;
     }
 
