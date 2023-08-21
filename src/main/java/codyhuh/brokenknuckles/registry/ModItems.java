@@ -45,4 +45,7 @@ public class ModItems {
     public static final RegistryObject<Item> TEMP_SHADOW_CONTROLLER = ITEMS.register("shadow_controller_temp", () -> new TempShadowControllerItem(new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> BARRIER_SETTINGS_WAND = ITEMS.register("barrier_settings_wand", () -> new SettingsWandItem(new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> MAGIC_WEAPON = ITEMS.register("magic_weapon", () -> new ShadowWeaponItem(new Item.Properties().fireResistant().stacksTo(1)));
+    public static final RegistryObject<Item> GRUNG_SPEAR = ITEMS.register("grung_spear", ()-> new GrungSpearNoBoomItem(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> GRUNG_SPEAR_EXPLODING = ITEMS.register("grung_spear_exploding", ()-> new GrungSpearItem(new Item.Properties().stacksTo(16)));
+
 }

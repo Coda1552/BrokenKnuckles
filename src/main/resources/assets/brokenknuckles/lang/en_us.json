@@ -63,6 +63,8 @@
   "entity.brokenknuckles.bullet": "Bullet",
   "entity.brokenknuckles.dandy_deer": "Dandiloo",
   "entity.brokenknuckles.sea_beak": "Sea Beak",
+  "entity.brokenknuckles.spear": "Exploding Grung Spear",
+  "entity.brokenknuckles.spear_no_boom": "Grung Spear",
 
   "sound.brokenknuckles.flintknock_shoot": "Flintknock fires",
   "sound.brokenknuckles.flintknock_reloading": "Flintknock reloads",
@@ -76,5 +78,8 @@
   "event.brokenknuckles.notenchanted": "Not enchanted",
 
   "key.category.brokenknuckles.bloodandiron": "Blood and Iron",
-  "key.brokenknuckles.activate_invis": "Activate Invisibility"
+  "key.brokenknuckles.activate_invis": "Activate Invisibility",
+
+  "item.brokenknuckles.grung_spear": "Swamp Spear",
+  "item.brokenknuckles.grung_spear_exploding": "Exploding Swamp Spear"
 }

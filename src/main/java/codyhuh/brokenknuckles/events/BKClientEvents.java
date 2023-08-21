@@ -4,28 +4,18 @@ import codyhuh.brokenknuckles.BrokenKnuckles;
 import codyhuh.brokenknuckles.client.BKModelLayers;
 import codyhuh.brokenknuckles.client.geo.SimpleGeoModel;
 import codyhuh.brokenknuckles.client.geo.SimpleGeoRenderer;
-import codyhuh.brokenknuckles.client.models.AltarDisplayModel;
-import codyhuh.brokenknuckles.client.models.BulletModel;
-import codyhuh.brokenknuckles.client.models.DwarvenSteelArmorModel;
-import codyhuh.brokenknuckles.client.models.MagicArmorModel;
+import codyhuh.brokenknuckles.client.models.*;
 import codyhuh.brokenknuckles.client.renderer.AltarDisplayRenderer;
 import codyhuh.brokenknuckles.client.renderer.BulletRenderer;
-import codyhuh.brokenknuckles.common.entities.DandyDeer;
+import codyhuh.brokenknuckles.client.renderer.GrungSpearExplodingRenderer;
 import codyhuh.brokenknuckles.network.ModMessages;
 import codyhuh.brokenknuckles.network.packet.UpdateInvisC2SPacket;
 import codyhuh.brokenknuckles.registry.ModBlockEntities;
-import codyhuh.brokenknuckles.registry.ModBlocks;
 import codyhuh.brokenknuckles.registry.ModEntities;
 import codyhuh.brokenknuckles.registry.ModItems;
 import codyhuh.brokenknuckles.util.BKKeyBindings;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
-import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.item.ItemProperties;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CrossbowItem;
 import net.minecraftforge.api.distmarker.Dist;
@@ -49,6 +39,7 @@ public class BKClientEvents {
     public static void registerRenders(EntityRenderersEvent.RegisterRenderers e) {
         // "Vanilla" format models
         e.registerEntityRenderer(ModEntities.BULLET.get(), BulletRenderer::new);
+        e.registerEntityRenderer(ModEntities.SPEAR.get(), GrungSpearExplodingRenderer::new);
         // Block entity models
         BlockEntityRenderers.register(ModBlockEntities.ALTAR_DISPLAY_BE.get(), AltarDisplayRenderer::new);
         // Geckolib models
@@ -62,6 +53,7 @@ public class BKClientEvents {
         e.registerLayerDefinition(BKModelLayers.BULLET, BulletModel::createBodyLayer);
         e.registerLayerDefinition(BKModelLayers.MAGIC_ARMOR, MagicArmorModel::createBodyLayer);
         e.registerLayerDefinition(BKModelLayers.ALTAR_DISPLAY, AltarDisplayModel::createBodyLayer);
+        e.registerLayerDefinition(BKModelLayers.GRUNG_SPEAR, GrungSpearModel::createBodyLayer);
     }
 
     @SubscribeEvent

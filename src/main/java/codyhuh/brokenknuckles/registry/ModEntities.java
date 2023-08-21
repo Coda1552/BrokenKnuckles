@@ -4,6 +4,8 @@ import codyhuh.brokenknuckles.BrokenKnuckles;
 import codyhuh.brokenknuckles.common.entities.DandyDeer;
 import codyhuh.brokenknuckles.common.entities.SeaBeak;
 import codyhuh.brokenknuckles.common.entities.item.Bullet;
+import codyhuh.brokenknuckles.common.entities.item.ThrownSpear;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.registries.DeferredRegister;
@@ -32,5 +34,18 @@ public class ModEntities {
                     .setTrackingRange(16)
                     .updateInterval(1)
                     .build("dandy_deer"));
+
+    public static final RegistryObject<EntityType<ThrownSpear>> SPEAR =
+            registerEntity(EntityType.Builder.<ThrownSpear>of(ThrownSpear::new, MobCategory.MISC)
+                .sized(0.5F, 0.5F)
+                .clientTrackingRange(4)
+                .updateInterval(20), "spear");
+
+
+
+    public static final <T extends Entity> RegistryObject<EntityType<T>> registerEntity(EntityType.Builder<T> builder, String entityName){
+        return ENTITIES.register(entityName, () -> builder.build(entityName));
+    }
+
 
 }
