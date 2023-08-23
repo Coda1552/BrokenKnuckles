@@ -78,7 +78,7 @@ public class ThrownSpear extends AbstractArrow {
                 if(!dealtDamage){
                     if(this.getTridentItem() != null){
                         if(this.getTridentItem() instanceof GrungSpearItem){
-                            this.level().explode(this, this.getX(), this.getY(0.0625D), this.getZ(), 1.5F, Level.ExplosionInteraction.NONE);
+                            this.level().explode(this, this.getX(), this.getY(0.0625D), this.getZ(), 2.5F, Level.ExplosionInteraction.NONE);
                         }
                     }
                 }
