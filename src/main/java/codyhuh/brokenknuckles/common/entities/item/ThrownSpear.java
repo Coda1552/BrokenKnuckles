@@ -14,6 +14,9 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageSources;
+import net.minecraft.world.damagesource.DamageType;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;
@@ -38,7 +41,7 @@ public class ThrownSpear extends AbstractArrow {
     private boolean dealtDamage;
     public int clientSideReturnTridentTickCount;
     private boolean exploded;
-
+    private LivingEntity pShooter;
     public ThrownSpear(EntityType<? extends AbstractArrow> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
@@ -51,6 +54,7 @@ public class ThrownSpear extends AbstractArrow {
         }
         this.entityData.set(ID_FOIL, pStack.hasFoil());
         exploded = pExploded;
+        this.pShooter = pShooter;
     }
 
     public Item getTridentItem(){
@@ -78,7 +82,7 @@ public class ThrownSpear extends AbstractArrow {
                 if(!dealtDamage){
                     if(this.getTridentItem() != null){
                         if(this.getTridentItem() instanceof GrungSpearItem){
-                            this.level().explode(this, this.getX(), this.getY(0.0625D), this.getZ(), 2.5F, Level.ExplosionInteraction.NONE);
+                            this.level().explode(this ,this.getX(), this.getY(0.0625D), this.getZ(), 2.0F, Level.ExplosionInteraction.NONE);
                         }
                     }
                 }
